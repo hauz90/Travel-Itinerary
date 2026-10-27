@@ -1,0 +1,1317 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Melbourne &amp; Tasmania 2027</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNGNEUzRTYiLz48cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNCAxNCkgc2NhbGUoMS41KSIgZD0iTTE3LjggMTkuMiAxNiAxMWwzLjUtMy41QzIxIDYgMjEuNSA0IDIxIDNjLTEtLjUtMyAwLTQuNSAxLjVMMTMgOCA0LjggNi4yYy0uNS0uMS0uOS4xLTEuMS41bC0uMy41Yy0uMi41LS4xIDEgLjMgMS4zTDkgMTJsLTIgM0g0bC0xIDEgMyAyIDIgMyAxLTF2LTNsMy0yIDMuNSA1LjNjLjMuNC44LjUgMS4zLjNsLjUtLjJjLjQtLjMuNi0uNy41LTEuMnoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0I4NjA2RiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+">
+<meta name="apple-mobile-web-app-title" content="Aus 2027">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  try { var t = localStorage.getItem('trip:theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  window.tailwind = window.tailwind || {}; tailwind.config = { corePlugins: { preflight: true } };
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/framer-motion@10.18.0/dist/framer-motion.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+:root{
+  --paper:#F5F4F2; --surface:#FFFFFF; --sunk:#ECEAE6; --line:#DCD8D2;
+  --ink:#24262A; --ink2:#5E5B57; --ink3:#8E8A84;
+  --sakura:#B8606F; --sakura-wash:#F4E3E6; --sakura-soft:#E9C3CA;
+  --moss:#4F6B4A; --moss-wash:#E3EBDF;
+  --ochre:#94711F; --ochre-wash:#F3EBD6;
+  --momiji:#A3402E; --momiji-wash:#F6E0DA;
+  --c-1:#2B4C8C; --w-1:#E4EAF5; --c-2:#1B6A70; --w-2:#DFEFEF; --c-3:#A3341F; --w-3:#F7E3DE;
+  --c-4:#4F6A1E; --w-4:#E8EEDB; --c-5:#8A5300; --w-5:#F7EBD6; --c-6:#6B3FA0; --w-6:#EEE6F7;
+  --shadow:0 1px 0 rgba(36,38,42,.04), 0 8px 24px -16px rgba(36,38,42,.25);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16181A; --surface:#1F2225; --sunk:#26292D; --line:#33373C;
+    --ink:#ECE9E4; --ink2:#B4AFA8; --ink3:#837E78;
+    --sakura:#E59AA8; --sakura-wash:#3A2A2E; --sakura-soft:#5A3A41;
+    --moss:#9DBB92; --moss-wash:#26332A;
+    --ochre:#D9B864; --ochre-wash:#36301F;
+    --momiji:#EE8C78; --momiji-wash:#3D2622;
+    --c-1:#93ADEB; --w-1:#22304A; --c-2:#6CC7C9; --w-2:#1C3537; --c-3:#F2907D; --w-3:#3E2420;
+    --c-4:#B5CC7C; --w-4:#2C3520; --c-5:#EDBA62; --w-5:#3A2E18; --c-6:#C6A6F0; --w-6:#33284A;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 10px 24px -16px rgba(0,0,0,.7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --c-1:#93ADEB; --w-1:#22304A; --c-2:#6CC7C9; --w-2:#1C3537; --c-3:#F2907D; --w-3:#3E2420;
+  --c-4:#B5CC7C; --w-4:#2C3520; --c-5:#EDBA62; --w-5:#3A2E18; --c-6:#C6A6F0; --w-6:#33284A;
+  --paper:#16181A; --surface:#1F2225; --sunk:#26292D; --line:#33373C;
+  --ink:#ECE9E4; --ink2:#B4AFA8; --ink3:#837E78;
+  --sakura:#E59AA8; --sakura-wash:#3A2A2E; --sakura-soft:#5A3A41;
+  --moss:#9DBB92; --moss-wash:#26332A;
+  --ochre:#D9B864; --ochre-wash:#36301F;
+  --momiji:#EE8C78; --momiji-wash:#3D2622;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 10px 24px -16px rgba(0,0,0,.7);
+  color-scheme: dark;
+}
+:root{ box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+*,*::before,*::after{ box-sizing:inherit; }
+html{ scroll-padding-top:env(safe-area-inset-top,0px); background:var(--paper); }
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased; transition:background .3s,color .3s; }
+img{ max-width:100%; }
+.serif{ font-family:var(--serif); }
+.wrap{ max-width:720px; margin:0 auto; padding:0 18px 120px; }
+.surface{ background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); }
+.muted{ color:var(--ink2); } .faint{ color:var(--ink3); }
+button{ font:inherit; color:inherit; }
+:focus-visible{ outline:2px solid var(--sakura); outline-offset:2px; border-radius:6px; }
+.chip{ display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background:var(--surface); font-size:13px; white-space:nowrap; cursor:pointer; transition:background .2s,border-color .2s,color .2s; }
+.chip[aria-pressed="true"]{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.tag{ font-size:11.5px; padding:1px 8px; border-radius:999px; background:var(--sunk); color:var(--ink2); }
+.tag.must{ background:var(--sakura-wash); color:var(--sakura); }
+.tag.shop{ background:var(--moss-wash); color:var(--moss); }
+.tag.trip{ background:var(--ochre-wash); color:var(--ochre); }
+.badge{ display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:500; padding:3px 10px; border-radius:999px; cursor:pointer; border:0; }
+.badge .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+.badge.pending{ background:var(--ochre-wash); color:var(--ochre); }
+.badge.booked{ background:var(--moss-wash); color:var(--moss); }
+.badge.action{ background:var(--momiji-wash); color:var(--momiji); }
+.rail{ position:absolute; left:27px; top:0; bottom:0; width:1px; background:var(--line); }
+.daynum{ font-family:var(--serif); font-weight:700; font-size:30px; line-height:1; letter-spacing:-.02em; }
+.check{ width:22px; height:22px; flex:none; border-radius:50%; border:1.5px solid var(--ink3); display:grid; place-items:center; cursor:pointer; background:transparent; transition:all .2s; padding:0; }
+.check[aria-checked="true"]{ background:var(--moss); border-color:var(--moss); color:var(--paper); }
+.done .act-title{ text-decoration:line-through; text-decoration-color:var(--ink3); color:var(--ink3); }
+textarea, input, select{ font:inherit; color:var(--ink); background:var(--sunk); border:1px solid var(--line); border-radius:10px; padding:10px 12px; width:100%; }
+textarea:focus, input:focus, select:focus{ outline:2px solid var(--sakura-soft); border-color:var(--sakura); }
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:11px 16px; border-radius:12px; border:1px solid var(--line); background:var(--surface); font-weight:500; cursor:pointer; transition:background .2s, transform .1s; }
+.btn:hover{ background:var(--sunk); } .btn:active{ transform:scale(.98); }
+.btn.primary{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.btn.primary:hover{ opacity:.92; }
+.nav{ position:fixed; left:0; right:0; bottom:0; z-index:40; padding-bottom:env(safe-area-inset-bottom,0px); background:color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--line); }
+.nav button{ flex:1; min-width:0; display:flex; flex-direction:column; align-items:center; gap:2px; padding:10px 2px 12px; background:none; border:0; cursor:pointer; color:var(--ink3); font-size:10.5px; position:relative; white-space:nowrap; }
+.nav button[aria-current="page"]{ color:var(--ink); }
+.nav .pip{ position:absolute; top:0; height:2px; width:28px; border-radius:2px; background:var(--sakura); }
+.scroller{ overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.scroller::-webkit-scrollbar{ display:none; }
+.stamp{ font-family:var(--serif); font-weight:700; font-size:15px; width:44px; height:44px; display:grid; place-items:center; border-radius:10px; border:1px solid var(--line); color:var(--cc); background:var(--surface); writing-mode:vertical-rl; letter-spacing:.08em; transition:all .3s; }
+.stamp.on{ border:2px solid var(--cc); background:var(--cw); }
+.stamp.sel{ background:var(--cc); color:var(--surface); border:2px solid var(--cc); }
+.stamp-btn{ background:none; border:0; padding:0; cursor:pointer; font:inherit; color:inherit; border-radius:12px; }
+.stamp-btn:active .stamp{ transform:scale(.95); }
+.city-chip{ display:inline-flex; align-items:center; font-size:12px; font-weight:700; padding:1px 9px; border-radius:999px; color:var(--cc); background:var(--cw); }
+.chip.city[aria-pressed="true"]{ background:var(--cc); border-color:var(--cc); color:var(--surface); }
+.chip.city{ color:var(--cc); }
+.phrase{ font-family:var(--serif); font-size:clamp(26px,7vw,36px); font-weight:700; letter-spacing:.04em; line-height:1.3; }
+.toast{ position:fixed; left:50%; bottom:calc(84px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); z-index:50; background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:999px; font-size:13.5px; box-shadow:var(--shadow); white-space:nowrap; }
+.risk{ font-size:12px; font-weight:500; padding:2px 8px; border-radius:6px; }
+.risk.low{ background:var(--moss-wash); color:var(--moss); }
+.risk.ask{ background:var(--ochre-wash); color:var(--ochre); }
+.risk.unknown{ background:var(--momiji-wash); color:var(--momiji); }
+.kv dt{ font-size:12px; color:var(--ink3); margin-top:10px; }
+.kv dd{ margin:2px 0 0; }
+@media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+(function(){
+const R = window.React, RD = window.ReactDOM;
+if (!R || !RD || !window.htm) { document.getElementById('root').innerHTML = '<p style="padding:24px">The app scripts could not load. Check your connection and reload.</p>'; return; }
+const { useState, useEffect, useMemo, useCallback, useRef, forwardRef, createElement } = R;
+const html = window.htm.bind(createElement);
+
+/* ---------- libraries with graceful fallbacks ---------- */
+const FM = window.Motion || window.FramerMotion || null;
+const strip = ({initial,animate,exit,transition,layout,layoutId,whileTap,whileHover,variants,...p}) => p;
+const MOTION_CACHE = {};
+const motion = (FM && FM.motion) || new Proxy({}, { get: (_, tag) => MOTION_CACHE[tag] || (MOTION_CACHE[tag] = forwardRef((p, ref) => createElement(tag, { ...strip(p), ref }))) });
+const AnimatePresence = (FM && FM.AnimatePresence) || (({ children }) => children);
+const MotionConfig = (FM && FM.MotionConfig) || (({ children }) => children);
+const LR = window.LucideReact || window.lucideReact || window.LucideIcons || {};
+/* Built-in icon set (Lucide-style strokes) so icons always render, even offline */
+const P = (d) => ['path', { d }];
+const ICON_DEFS = {
+  CalendarDays:[['rect',{x:3,y:4,width:18,height:18,rx:2}],P('M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01')],
+  Ticket:[P('M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z'),P('M13 5v2M13 17v2M13 11v2')],
+  BedDouble:[P('M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8'),P('M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4'),P('M12 4v6M2 18h20')],
+  UtensilsCrossed:[P('m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8'),P('M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7'),P('m2.1 21.8 6.4-6.3M19 5l-7 7')],
+  MountainSnow:[P('m8 3 4 8 5-5 5 15H2L8 3z'),P('M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19')],
+  Wrench:[P('M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z')],
+  Moon:[P('M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z')],
+  Sun:[['circle',{cx:12,cy:12,r:4}],P('M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41')],
+  ChevronDown:[P('m6 9 6 6 6-6')],
+  Check:[P('M20 6 9 17l-5-5')],
+  CalendarPlus:[['rect',{x:3,y:4,width:18,height:18,rx:2}],P('M16 2v4M8 2v4M3 10h18M12 14v6M9 17h6')],
+  MapPin:[P('M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'),['circle',{cx:12,cy:10,r:3}]],
+  Pencil:[P('M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z'),P('m15 5 4 4')],
+  Plus:[P('M5 12h14M12 5v14')],
+  Copy:[['rect',{x:8,y:8,width:14,height:14,rx:2}],P('M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2')],
+  Volume2:[P('M11 5 6 9H2v6h4l5 4V5Z'),P('M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14')],
+  Map:[P('M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z'),P('M9 3v15M15 6v15')],
+  Navigation:[P('M3 11l19-9-9 19-2-8-8-2z')],
+  Phone:[P('M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z')],
+  TrainFront:[P('M8 3h8a4 4 0 0 1 4 4v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a4 4 0 0 1 4-4z'),P('M4 11h16M8 15h.01M16 15h.01M6 21l2-3M18 21l-2-3')],
+  Clock:[['circle',{cx:12,cy:12,r:10}],P('M12 6v6l4 2')],
+  ExternalLink:[P('M15 3h6v6M10 14 21 3'),P('M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6')],
+  Eye:[P('M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z'),['circle',{cx:12,cy:12,r:3}]],
+  Download:[P('M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3')],
+  FileSpreadsheet:[P('M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'),P('M14 2v6h6M8 13h2M14 13h2M8 17h2M14 17h2')],
+  RotateCcw:[P('M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8'),P('M3 3v5h5')],
+  Star:[P('M11.53 2.3a.53.53 0 0 1 .94 0l2.31 4.68a2.12 2.12 0 0 0 1.6 1.16l5.17.76a.53.53 0 0 1 .29.9l-3.74 3.64a2.12 2.12 0 0 0-.61 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.12 2.12 0 0 0-1.97 0L6.4 21.01a.53.53 0 0 1-.77-.56l.88-5.14a2.12 2.12 0 0 0-.61-1.88L2.16 9.8a.53.53 0 0 1 .29-.9l5.17-.76a2.12 2.12 0 0 0 1.6-1.16z')],
+  Search:[['circle',{cx:11,cy:11,r:8}],P('m21 21-4.3-4.3')],
+  X:[P('M18 6 6 18M6 6l12 12')],
+  Cloud:[P('M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z')],
+  CloudRain:[P('M4 14.9A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.24'),P('M16 14v6M8 14v6M12 16v6')],
+  CloudSun:[P('M12 2v2M4.93 4.93l1.41 1.41M20 12h2M19.07 4.93l-1.41 1.41'),P('M15.95 12.65a4 4 0 0 0-5.93-4.13'),P('M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z')],
+  Thermometer:[P('M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z')],
+  Car:[P('M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2'),['circle',{cx:7,cy:17,r:2}],P('M9 17h6'),['circle',{cx:17,cy:17,r:2}]],
+  Plane:[P('M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z')],
+  Backpack:[P('M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z'),P('M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2'),P('M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5M8 10h8')],
+  Coins:[['circle',{cx:8,cy:8,r:6}],P('M18.09 10.37A6 6 0 1 1 10.34 18M7 6h1v4M16.71 13.88l.7.71-2.82 2.82')],
+  Users:[P('M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'),['circle',{cx:9,cy:7,r:4}],P('M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75')],
+  Trash:[P('M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2')],
+  Zap:[P('M13 2 3 14h9l-1 8 10-12h-9l1-8z')],
+  StickyNote:[P('M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z'),P('M15 3v6h6')],
+};
+const ICON_CACHE = {};
+const I = (name) => {
+  if (ICON_CACHE[name]) return ICON_CACHE[name];
+  const def = ICON_DEFS[name];
+  const C = def ? (({ size = 18, strokeWidth = 2, style, fill = 'none' }) => createElement('svg', { xmlns:'http://www.w3.org/2000/svg', width:size, height:size, viewBox:'0 0 24 24', fill, stroke:'currentColor', strokeWidth, strokeLinecap:'round', strokeLinejoin:'round', style:{ flex:'none', ...(style || {}) }, 'aria-hidden':true },
+      ...def.map(([tag, attrs], i) => createElement(tag, { key:i, ...attrs }))))
+    : (LR[name] || ((p) => html`<span aria-hidden="true" style=${{ display:'inline-block', width:(p && p.size) || 18, height:(p && p.size) || 18 }}></span>`));
+  return (ICON_CACHE[name] = C);
+};
+const SectionIcon = ({ name }) => { const C = I(name); return html`<span style=${{ display:'inline-grid', placeItems:'center', width:34, height:34, borderRadius:10, background:'var(--sakura-wash)', color:'var(--sakura)', flex:'none' }}><${C} size=${18} /></span>`; };
+
+/* ---------- storage ---------- */
+const store = {
+  get(k, d){ try { const v = localStorage.getItem('trip:' + k); return v == null ? d : JSON.parse(v); } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem('trip:' + k, JSON.stringify(v)); } catch(e){} },
+  clear(){ try { Object.keys(localStorage).filter(k => k.startsWith('trip:')).forEach(k => localStorage.removeItem(k)); } catch(e){} }
+};
+function usePersist(key, init){
+  const [v, setV] = useState(() => store.get(key, init));
+  useEffect(() => { store.set(key, v); }, [key, v]);
+  return [v, setV];
+}
+
+/* ---------- partner sync (shared db) ---------- */
+const SYNC = { state:'connecting', subs:new Set(), p:null };
+const setSync = (st) => { if (SYNC.state === st) return; SYNC.state = st; SYNC.subs.forEach(f => f(st)); };
+function getDb(){
+  if (SYNC.p) return SYNC.p;
+  SYNC.p = (async () => {
+    try {
+      if (!window.claude || typeof window.claude.use !== 'function') { setSync('local'); return null; }
+      const [db, user] = await Promise.all([window.claude.use('db'), window.claude.use('user').catch(() => null)]);
+      if (!db) { setSync('local'); return null; }
+      let can = null;
+      try { can = user ? await user.can('data.write') : null; } catch(e){}
+      setSync(can === false ? 'readonly' : 'synced');
+      return db;
+    } catch(e){ setSync('local'); return null; }
+  })();
+  return SYNC.p;
+}
+function useSyncState(){
+  const [st, setSt] = useState(SYNC.state);
+  useEffect(() => { SYNC.subs.add(setSt); setSt(SYNC.state); getDb(); return () => SYNC.subs.delete(setSt); }, []);
+  return st;
+}
+const isBlank = (v) => v == null || (Array.isArray(v) ? v.length === 0 : typeof v === 'object' && Object.keys(v).length === 0);
+/* Like usePersist, but also shared through the artifact db doc trip/<docId>.
+   First contact merges local + remote; after that, the latest change wins. */
+function useSynced(key, docId, init, merge){
+  const [v, setV] = usePersist(key, init);
+  const cur = useRef(v); cur.current = v;
+  const ref = useRef(null), ready = useRef(false), fromRemote = useRef(false);
+  const lastSent = useRef(null), busy = useRef(false), again = useRef(false), timer = useRef(null);
+  const push = useCallback(async () => {
+    if (!ref.current || SYNC.state === 'readonly') return;
+    if (busy.current) { again.current = true; return; }
+    busy.current = true;
+    do {
+      again.current = false;
+      const json = JSON.stringify(cur.current === undefined ? null : cur.current);
+      if (json === lastSent.current) continue;
+      const prev = lastSent.current;
+      lastSent.current = json;
+      try { await ref.current.set({ json, at: Date.now() }); if (SYNC.state === 'error') setSync('synced'); }
+      catch(e){ lastSent.current = prev; setSync(e && (e.code === 'invalid_argument' || e.code === 'not_granted') ? 'readonly' : 'error'); }
+    } while (again.current);
+    busy.current = false;
+  }, []);
+  useEffect(() => {
+    let unsub = null, dead = false;
+    getDb().then(db => {
+      if (!db || dead) return;
+      try { ref.current = db.doc('plan/' + docId); } catch(e){ return; }
+      unsub = ref.current.onSnapshot(snap => {
+        if (snap.metadata && snap.metadata.hasPendingWrites) return;
+        const first = !ready.current;
+        ready.current = true;
+        if (!snap.exists) { if (first && !isBlank(cur.current) && JSON.stringify(cur.current) !== JSON.stringify(init)) push(); return; }
+        const body = snap.data() || {};
+        const json = typeof body.json === 'string' ? body.json : 'null';
+        if (json === lastSent.current) return;
+        let rv; try { rv = JSON.parse(json); } catch(e){ return; }
+        lastSent.current = json;
+        const next = first && merge ? merge(cur.current, rv) : rv;
+        const nextJson = JSON.stringify(next);
+        if (nextJson !== JSON.stringify(cur.current)) { fromRemote.current = true; cur.current = next; setV(next); }
+        if (first && merge && nextJson !== JSON.stringify(rv)) setTimeout(push, 0);
+      }, e => { setSync(e && e.code === 'invalid_argument' ? 'readonly' : 'error'); });
+    });
+    return () => { dead = true; if (unsub) unsub(); clearTimeout(timer.current); };
+  }, []);
+  useEffect(() => {
+    if (fromRemote.current) { fromRemote.current = false; return; }
+    if (!ready.current || !ref.current) return;
+    clearTimeout(timer.current);
+    timer.current = setTimeout(push, 700);
+  }, [v]);
+  return [v, setV];
+}
+const mergeObj = (l, r) => ({ ...(l || {}), ...(r || {}) });
+const mergeById = (l, r) => { const m = new Map(); (l || []).forEach(x => m.set(x.id, x)); (r || []).forEach(x => m.set(x.id, x)); return [...m.values()]; };
+const mergePack = (l, r) => ({ checked: mergeObj(l && l.checked, r && r.checked), custom: mergeById(l && l.custom, r && r.custom) });
+/* ---------- clipboard / downloads ---------- */
+async function copyText(t){
+  try { await navigator.clipboard.writeText(t); return true; } catch(e) {
+    try { const ta = document.createElement('textarea'); ta.value = t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); const ok = document.execCommand('copy'); ta.remove(); return ok; } catch(_) { return false; }
+  }
+}
+let dlPromise = null;
+const getDownloads = () => { if (!dlPromise) dlPromise = (window.claude && window.claude.use) ? window.claude.use('downloads').catch(() => null) : Promise.resolve(null); return dlPromise; };
+async function saveFile(filename, data, fallbackText){
+  const dl = await getDownloads();
+  if (dl) {
+    try { await dl.save({ filename, data }); return 'saved'; }
+    catch(e) { if (e && e.code === 'declined') return 'declined'; }
+  }
+  if (fallbackText != null && await copyText(fallbackText)) return 'copied';
+  return 'failed';
+}
+const csvCell = (v) => { const s = String(v == null ? '' : v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g,'""') + '"' : s; };
+const toCSV = (rows) => rows.map(r => r.map(csvCell).join(',')).join('\r\n');
+function Toast({ msg }){
+  return html`<${AnimatePresence}>${msg && html`<${motion.div} key=${msg} className="toast" role="status"
+    initial=${{ opacity:0, y:10, x:'-50%' }} animate=${{ opacity:1, y:0, x:'-50%' }} exit=${{ opacity:0, y:10, x:'-50%' }} transition=${{ duration:.2 }}>${msg}<//>`}<//>`;
+}
+function Sheet({ title, onClose, children }){
+  useEffect(() => { const k = (e) => e.key === 'Escape' && onClose(); window.addEventListener('keydown', k); return () => window.removeEventListener('keydown', k); }, [onClose]);
+  return html`<${motion.div} key="sheet-bg" onClick=${onClose} initial=${{ opacity:0 }} animate=${{ opacity:1 }} exit=${{ opacity:0 }}
+    style=${{ position:'fixed', inset:0, zIndex:70, background:'rgba(10,10,12,.45)', display:'flex', alignItems:'flex-end', justifyContent:'center' }}>
+    <${motion.div} role="dialog" aria-label=${title} onClick=${e => e.stopPropagation()} initial=${{ y:40, opacity:0 }} animate=${{ y:0, opacity:1 }} exit=${{ y:40, opacity:0 }} transition=${{ duration:.22 }}
+      class="surface" style=${{ width:'100%', maxWidth:640, maxHeight:'88vh', overflowY:'auto', borderRadius:'18px 18px 0 0', padding:'18px 18px calc(18px + env(safe-area-inset-bottom,0px))' }}>
+      <div class="flex items-center justify-between" style=${{ marginBottom:12 }}>
+        <h3 class="serif" style=${{ margin:0, fontSize:19, fontWeight:700 }}>${title}</h3>
+        <button class="btn" style=${{ padding:'6px 12px' }} onClick=${onClose}>Cancel</button>
+      </div>
+      ${children}
+    <//>
+  <//>`;
+}
+const Field = ({ label, children }) => html`<label class="block" style=${{ marginTop:12 }}><span class="faint" style=${{ fontSize:12.5 }}>${label}</span><div style=${{ marginTop:5 }}>${children}</div></label>`;
+function Fold({ id, icon, title, summary, children, defOpen }){
+  const Chevron = I('ChevronDown'), Ic = I(icon);
+  const [open, setOpen] = usePersist(id + '-open', !!defOpen);
+  return html`<div class="surface" style=${{ marginBottom:12, overflow:'hidden' }}>
+    <button onClick=${() => setOpen(o => !o)} aria-expanded=${open} class="w-full text-left" style=${{ background:'none', border:0, padding:18, cursor:'pointer', display:'block' }}>
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="flex items-center gap-2" style=${{ fontWeight:700 }}><${Ic} size=${18} />${title}</div>
+          ${summary && html`<p class="muted" style=${{ fontSize:13.5, margin:'6px 0 0' }}>${summary}</p>`}
+        </div>
+        <${motion.span} animate=${{ rotate: open ? 180 : 0 }} transition=${{ duration:.25 }} style=${{ display:'inline-flex', color:'var(--ink3)', marginTop:2 }}><${Chevron} size=${20} /><//>
+      </div>
+    </button>
+    <${AnimatePresence} initial=${false}>
+      ${open && html`<${motion.div} key="f" initial=${{ height:0, opacity:0 }} animate=${{ height:'auto', opacity:1 }} exit=${{ height:0, opacity:0 }} transition=${{ duration:.28 }} style=${{ overflow:'hidden' }}>
+        <div style=${{ padding:'14px 18px 18px', borderTop:'1px solid var(--line)' }}>${children}</div>
+      <//>`}
+    <//>
+  </div>`;
+}
+
+/* ---------- sync status ---------- */
+const SYNC_TEXT = {
+  connecting: ['Connecting…', 'Checking whether this page can share with your partner.'],
+  synced: ['Synced with your partner', 'Plans, bookings, hotels, food, phrases, packing and spending are shared live with anyone you’ve given edit access. Everything also stays saved on this phone.'],
+  readonly: ['View-only', 'You can see shared changes, but this account can’t save to them. Ask the trip owner to share the page with you as Contributor or Editor. Your own changes stay on this phone.'],
+  local: ['This phone only', 'Sync isn’t available here — you may be signed out or have the page open outside Claude. Everything still saves on this phone.'],
+  error: ['Can’t reach sync right now', 'Probably no signal. Your changes are saved on this phone and go up with your next change once you’re back online.'],
+};
+function SyncCard(){
+  const st = useSyncState();
+  const Users = I('Users');
+  const [t, d] = SYNC_TEXT[st] || SYNC_TEXT.local;
+  const col = st === 'synced' ? 'var(--moss)' : st === 'error' ? 'var(--momiji)' : 'var(--ink3)';
+  return html`<div class="surface" style=${{ padding:18, marginBottom:12 }}>
+    <div class="flex items-center gap-2" style=${{ fontWeight:700 }}><${Users} size=${18} />Trip sync</div>
+    <div class="flex items-center gap-2" style=${{ marginTop:10, fontSize:14, fontWeight:600 }}><span style=${{ width:9, height:9, borderRadius:'50%', background:col, flex:'none' }}></span>${t}</div>
+    <p class="muted" style=${{ fontSize:13.5, margin:'6px 0 0' }}>${d}</p>
+    ${(st === 'synced' || st === 'readonly') && html`<p class="faint" style=${{ fontSize:12.5, margin:'8px 0 0' }}>To add your partner: open this page’s Share menu and invite them as Contributor or Editor. Viewers can see but not change anything.</p>`}
+  </div>`;
+}
+
+/* ---------- packing ---------- */
+/* ---------- trip setup (shared) ---------- */
+const BLANK_SETUP = { name:'', dest:'', start:'', nDays:7, cities:[], homeCity:'Singapore', homeCur:'SGD', localCur:'', rate:0, lang:'', tz:'', emergency:[] };
+let SETUP = BLANK_SETUP;
+const PALETTE = 6;
+const cityIdx = (c) => { const i = (SETUP.cities || []).indexOf(c); return i < 0 ? -1 : i % PALETTE; };
+const cityVars = (c) => { const i = cityIdx(c); return i < 0 ? { '--cc':'var(--ink2)', '--cw':'var(--sunk)' } : { '--cc':`var(--c-${i + 1})`, '--cw':`var(--w-${i + 1})` }; };
+const cityLabel = (c) => c || 'Travel day';
+
+/* ---------- dates ---------- */
+const parse = (s) => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const iso = (dt) => dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' + String(dt.getDate()).padStart(2, '0');
+const addDays = (s, n) => { const d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+const today0 = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
+const todayISO = () => iso(new Date());
+const daysUntil = (s) => Math.round((parse(s) - today0()) / 864e5);
+const fmt = (s, o) => { try { return parse(s).toLocaleDateString('en-GB', o || { weekday:'short', day:'numeric', month:'short' }); } catch(e){ return s; } };
+const hasDates = () => !!(SETUP.start && SETUP.nDays > 0);
+const tripEnd = () => addDays(SETUP.start, SETUP.nDays - 1);
+const tripState = () => {
+  if (!hasDates()) return { phase:'unset' };
+  const a = daysUntil(SETUP.start), b = daysUntil(tripEnd());
+  if (a > 0) return { phase:'before', days:a };
+  if (b >= 0) return { phase:'during', day:-a };
+  return { phase:'after' };
+};
+
+/* ---------- itinerary model ---------- */
+const TAGS = [
+  { id:'must', label:'Must-Visit' }, { id:'food', label:'Food' }, { id:'trip', label:'Day Trip' },
+  { id:'shop', label:'Shopping' }, { id:'photo', label:'Photo spot' }, { id:'book', label:'Booked' },
+];
+const TAG_LABEL = Object.fromEntries(TAGS.map(t => [t.id, t.label]));
+const blankDay = (n, date) => ({ n, date, city:'', area:'', title:'', stay:'', food:[], acts:[] });
+/* Line saved days up with the trip dates: keeps content by day number, adds or trims days. */
+function alignDays(saved){
+  if (!hasDates()) return [];
+  const out = [];
+  for (let n = 0; n < Math.min(SETUP.nDays, 60); n++) {
+    const d = (saved || [])[n];
+    out.push(d ? { ...blankDay(n, addDays(SETUP.start, n)), ...d, n, date: addDays(SETUP.start, n) } : blankDay(n, addDays(SETUP.start, n)));
+  }
+  return out;
+}
+let DAYS = [];
+let ALL_ACTS = [];
+const useItinerary = (days) => { DAYS = days; ALL_ACTS = days.flatMap(d => d.acts.map(a => ({ ...a, day:d }))); };
+const sortActs = (acts, day) => acts.slice().sort((a, b) => ((a.date || day.date) + a.start).localeCompare((b.date || day.date) + b.start));
+const placeQueries = (a, day) => (a.place && a.place.trim()) ? a.place.split(',').map(x => x.trim()).filter(Boolean) : [];
+const mapsUrl = (q) => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q + (SETUP.dest && !q.toLowerCase().includes(SETUP.dest.toLowerCase()) ? ', ' + SETUP.dest : ''));
+const dirUrl = (q) => 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(q);
+
+const gDate = (s) => s.replace(/-/g,'');
+const gTime = (t) => t.replace(':','') + '00';
+const gcalLink = (a, day) => 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+  + '&text=' + encodeURIComponent(a.title)
+  + '&dates=' + gDate(a.date || day.date) + 'T' + gTime(a.start) + '/' + gDate(a.date || day.date) + 'T' + gTime(a.end)
+  + (SETUP.tz ? '&ctz=' + encodeURIComponent(SETUP.tz) : '')
+  + '&details=' + encodeURIComponent((a.desc || '') + (a.note ? '\n' + a.note : '') + '\n\nDay ' + day.n + (day.city ? ' · ' + day.city : ''))
+  + '&location=' + encodeURIComponent(placeQueries(a, day)[0] || [day.area, day.city, SETUP.dest].filter(Boolean).join(', '));
+
+/* ---------- small components ---------- */
+function Tag({ id }){ return html`<span class=${'tag ' + id}>${TAG_LABEL[id]}</span>`; }
+const Empty = ({ icon, title, body, children }) => { const Ic = I(icon); return html`<div class="surface" style=${{ padding:'28px 20px', marginTop:16, textAlign:'center' }}>
+  <div style=${{ display:'inline-grid', placeItems:'center', width:48, height:48, borderRadius:14, background:'var(--sakura-wash)', color:'var(--sakura)' }}><${Ic} size=${22} /></div>
+  <div class="serif" style=${{ fontWeight:700, fontSize:18, marginTop:10 }}>${title}</div>
+  ${body && html`<p class="muted" style=${{ fontSize:14, margin:'6px auto 0', maxWidth:420 }}>${body}</p>`}
+  ${children && html`<div style=${{ marginTop:14 }}>${children}</div>`}
+</div>`; };
+const H2 = ({ id, icon, children, right }) => html`<div class="flex items-baseline justify-between" style=${{ marginTop:28 }}>
+  <h2 id=${id} class="serif flex items-center gap-3" style=${{ fontSize:22, fontWeight:700, margin:0 }}><${SectionIcon} name=${icon} />${children}</h2>${right || ''}</div>`;
+const MapChip = ({ q, label }) => { const Pin = I('MapPin'); return html`<a href=${mapsUrl(q)} target="_blank" rel="noopener" aria-label=${'Search ' + q + ' on Google Maps'} style=${{ display:'inline-flex', alignItems:'center', gap:4, fontSize:12, padding:'3px 9px', borderRadius:999, border:'1px solid var(--line)', background:'var(--surface)', color:'var(--ink2)', textDecoration:'none' }}><${Pin} size=${12} />${label || q}</a>`; };
+
+/* ---------- setup sheet ---------- */
+function SetupEditor({ setup, onSave, onClose }){
+  const [f, setF] = useState(() => ({ ...BLANK_SETUP, ...setup, cities:(setup.cities || []).join(', '), nDays:String(setup.nDays || 7), rate:setup.rate ? String(setup.rate) : '' }));
+  const set = (k) => (e) => setF(x => ({ ...x, [k]: e.target.value }));
+  const valid = f.name.trim() && /^\d{4}-\d\d-\d\d$/.test(f.start) && parseInt(f.nDays, 10) > 0;
+  const save = () => {
+    if (!valid) return;
+    onSave({ ...setup, name:f.name.trim(), dest:f.dest.trim(), start:f.start, nDays:Math.min(60, Math.max(1, parseInt(f.nDays, 10))),
+      cities:f.cities.split(',').map(x => x.trim()).filter(Boolean).slice(0, 12), homeCity:f.homeCity.trim(), homeCur:f.homeCur.trim().toUpperCase(),
+      localCur:f.localCur.trim().toUpperCase(), rate:parseFloat(f.rate) || 0, lang:f.lang.trim(), tz:f.tz.trim() });
+  };
+  return html`<${Sheet} title=${setup.name ? 'Trip setup' : 'Set up your trip'} onClose=${onClose}>
+    <${Field} label="Trip name"><input value=${f.name} onInput=${set('name')} placeholder="e.g. Seoul in spring" autoFocus /><//>
+    <${Field} label="Destination (country or region)"><input value=${f.dest} onInput=${set('dest')} placeholder="e.g. South Korea" /><//>
+    <div class="grid grid-cols-2 gap-3">
+      <${Field} label="First day (day you leave)"><input type="date" value=${f.start} onInput=${set('start')} /><//>
+      <${Field} label="Number of days"><input inputMode="numeric" value=${f.nDays} onInput=${set('nDays')} /><//>
+    </div>
+    <${Field} label="Cities, in order (comma-separated)"><input value=${f.cities} onInput=${set('cities')} placeholder="e.g. Seoul, Busan, Jeju" /><//>
+    <div class="grid grid-cols-2 gap-3">
+      <${Field} label="Home city"><input value=${f.homeCity} onInput=${set('homeCity')} /><//>
+      <${Field} label="Time zone there (optional)"><input value=${f.tz} onInput=${set('tz')} placeholder="e.g. Asia/Seoul" /><//>
+    </div>
+    <div class="grid grid-cols-3 gap-3">
+      <${Field} label="Home currency"><input value=${f.homeCur} onInput=${set('homeCur')} placeholder="SGD" /><//>
+      <${Field} label="Local currency"><input value=${f.localCur} onInput=${set('localCur')} placeholder="KRW" /><//>
+      <${Field} label=${'Local per 1 ' + (f.homeCur || 'home')}><input inputMode="decimal" value=${f.rate} onInput=${set('rate')} placeholder="e.g. 1050" /><//>
+    </div>
+    <${Field} label="Phrasebook voice language (optional)"><input value=${f.lang} onInput=${set('lang')} placeholder="e.g. ko-KR, ja-JP, th-TH, fr-FR" /><//>
+    <p class="faint" style=${{ fontSize:12.5, margin:'10px 0 0' }}>Changing the dates or number of days keeps your plans by day number.</p>
+    <button class="btn primary w-full" style=${{ marginTop:16, opacity: valid ? 1 : .5 }} disabled=${!valid} onClick=${save}>Save trip</button>
+  <//>`;
+}
+
+/* ---------- header ---------- */
+function Header({ doneCount, total, onTheme, dark, compact, cityF, onCity, onSetup }){
+  const st = tripState();
+  const curCity = st.phase === 'during' && DAYS[st.day] ? DAYS[st.day].city : null;
+  const Moon = I('Moon'), Sun = I('Sun'), Plane = I('Plane');
+  const big = { fontSize:'clamp(40px,12vw,64px)', fontWeight:700, lineHeight:1 };
+  let line;
+  if (st.phase === 'before') line = html`<span class="serif" style=${big}>${st.days}</span><span class="muted" style=${{ marginLeft:10 }}>${st.days === 1 ? 'day' : 'days'} until you fly</span>`;
+  else if (st.phase === 'during') line = html`<span class="serif" style=${big}>Day ${st.day}</span><span class="muted" style=${{ marginLeft:10 }}>${curCity ? 'in ' + curCity : 'travelling'}</span>`;
+  else if (st.phase === 'after') line = html`<span class="serif" style=${{ fontSize:'clamp(32px,9vw,48px)', fontWeight:700 }}>Welcome home</span><span class="muted" style=${{ marginLeft:10 }}>Trip complete</span>`;
+  const pct = total ? Math.round(doneCount / total * 100) : 0;
+  const pill = st.phase === 'before' ? st.days + (st.days === 1 ? ' day' : ' days') + ' to go' : st.phase === 'during' ? 'Day ' + st.day : st.phase === 'after' ? 'Trip complete' : 'Not set up';
+  const sub = [SETUP.dest, hasDates() ? fmt(SETUP.start, { day:'numeric', month:'short' }) + ' – ' + fmt(tripEnd(), { day:'numeric', month:'short', year:'numeric' }) : ''].filter(Boolean).join(' · ');
+  return html`<header style=${{ paddingTop: compact ? 14 : 20, paddingBottom: compact ? 0 : 8 }}>
+    <div class="flex items-center justify-between">
+      <button class="flex items-center gap-3 text-left" style=${{ background:'none', border:0, padding:0, cursor:'pointer' }} onClick=${onSetup} aria-label="Trip setup">
+        <span style=${{ display:'grid', placeItems:'center', width:40, height:40, borderRadius:11, background:'var(--sakura-wash)', color:'var(--sakura)', boxShadow:'var(--shadow)' }}><${Plane} size=${20} /></span>
+        <span style=${{ lineHeight:1.25 }}><span class="serif" style=${{ display:'block', fontWeight:700, fontSize:16 }}>${SETUP.name || 'New trip'}</span><span class="faint" style=${{ fontSize:12.5 }}>${sub || 'Tap to set up'}</span></span>
+      </button>
+      <div class="flex items-center gap-2">
+        ${compact && html`<span class="tag must" style=${{ fontSize:12, padding:'3px 10px', whiteSpace:'nowrap' }}>${pill}</span>`}
+        <button class="btn" style=${{ padding:'8px 10px', borderRadius:999 }} onClick=${onTheme} aria-label=${dark ? 'Switch to light mode' : 'Switch to dark mode'}>${dark ? html`<${Sun} size=${16} />` : html`<${Moon} size=${16} />`}</button>
+      </div>
+    </div>
+    ${!compact && st.phase !== 'unset' && html`<div>
+      <div class="flex items-end flex-wrap" style=${{ marginTop:18 }}>${line}</div>
+      ${SETUP.cities.length > 0 && html`<div>
+        <div class="flex gap-3 flex-wrap" style=${{ marginTop:20 }} role="group" aria-label="Show days by city">
+          ${SETUP.cities.map(c => { const ds = DAYS.filter(d => d.city === c).map(d => d.n); const rng = ds.length ? (ds.length > 1 ? 'Day ' + ds[0] + '–' + ds[ds.length - 1] : 'Day ' + ds[0]) : 'no days yet'; const sel = cityF === c; const here = curCity === c;
+            return html`<button key=${c} class="stamp-btn flex flex-col items-center gap-1" aria-pressed=${sel} onClick=${() => onCity(sel ? null : c)} title=${'Show ' + c + ' days'}>
+              <div class=${'stamp' + (sel ? ' sel' : here ? ' on' : '')} style=${{ ...cityVars(c), writingMode:'horizontal-tb', fontSize:18 }}>${c.slice(0, 2)}</div>
+              <span style=${{ fontSize:11.5, fontWeight: sel ? 700 : 500, color: sel ? 'var(--ink)' : 'var(--ink2)', maxWidth:72, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>${c}</span>
+              <span class="faint" style=${{ fontSize:10.5, marginTop:-3 }}>${rng}${here ? ' · now' : ''}</span>
+            </button>`; })}
+        </div>
+        <div class="faint" style=${{ fontSize:11.5, marginTop:6 }}>${cityF ? 'Showing ' + cityF + ' days — tap again to show all' : 'Tap a city to see just those days'}</div>
+      </div>`}
+      <div style=${{ marginTop:18 }}>
+        <div class="flex justify-between faint" style=${{ fontSize:12.5 }}><span>${doneCount} of ${total} plans ticked off</span><span>${pct}%</span></div>
+        <div style=${{ height:4, background:'var(--sunk)', borderRadius:4, marginTop:6, overflow:'hidden' }}>
+          <${motion.div} style=${{ height:'100%', width: pct + '%', background:'var(--sakura)', borderRadius:4 }} initial=${{ width:0 }} animate=${{ width: pct + '%' }} transition=${{ duration:.6, ease:'easeOut' }} />
+        </div>
+      </div>
+    </div>`}
+  </header>`;
+}
+
+/* ---------- itinerary editing ---------- */
+function ActEditor({ act, day, onSave, onDelete, onClose }){
+  const [f, setF] = useState(() => ({ title:'', desc:'', start:'09:00', end:'10:00', label:'', note:'', place:'', tags:[], ...act, label:(act && act.label) || '', note:(act && act.note) || '', place:(act && act.place) || '', date:(act && act.date) || day.date }));
+  const set = (k) => (e) => setF(x => ({ ...x, [k]: e.target.value }));
+  const toggleTag = (t) => setF(x => ({ ...x, tags: x.tags.includes(t) ? x.tags.filter(y => y !== t) : [...x.tags, t] }));
+  const valid = f.title.trim() && /^\d\d:\d\d$/.test(f.start) && /^\d\d:\d\d$/.test(f.end);
+  const save = () => {
+    if (!valid) return;
+    onSave({ id: f.id || ('u' + Date.now().toString(36)), title:f.title.trim(), desc:f.desc.trim(), start:f.start, end: f.end < f.start ? f.start : f.end, label:f.label.trim() || null, note:f.note.trim() || null, place:f.place.trim() || undefined, tags:f.tags, date: f.date && f.date !== day.date ? f.date : undefined });
+  };
+  return html`<${Sheet} title=${act ? 'Edit plan' : 'Add a plan · Day ' + day.n} onClose=${onClose}>
+    <${Field} label="What"><input value=${f.title} onInput=${set('title')} placeholder="e.g. Museum visit" autoFocus /><//>
+    <div class="grid grid-cols-2 gap-3">
+      <${Field} label="Start"><input type="time" value=${f.start} onInput=${set('start')} /><//>
+      <${Field} label="End"><input type="time" value=${f.end} onInput=${set('end')} /><//>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      <${Field} label="Date"><input type="date" value=${f.date} onInput=${set('date')} /><//>
+      <${Field} label="Time label (optional)"><input value=${f.label} onInput=${set('label')} placeholder="Lunch, Evening…" /><//>
+    </div>
+    <${Field} label="Details"><textarea rows="3" value=${f.desc} onInput=${set('desc')} placeholder="Address, booking reference, tips"></textarea><//>
+    <${Field} label="Map search (separate places with commas)"><input value=${f.place} onInput=${set('place')} placeholder="e.g. Gyeongbokgung Palace" /><//>
+    <${Field} label="Food note (optional)"><input value=${f.note} onInput=${set('note')} placeholder="e.g. Chicken or seafood — no beef" /><//>
+    <${Field} label="Tags"><div class="flex flex-wrap gap-2">${TAGS.map(t => html`<button type="button" key=${t.id} class="chip" aria-pressed=${f.tags.includes(t.id)} onClick=${() => toggleTag(t.id)}>${t.label}</button>`)}</div><//>
+    <div class="flex gap-2" style=${{ marginTop:18 }}>
+      ${act && html`<button class="btn" style=${{ color:'var(--momiji)' }} onClick=${() => { if (confirm('Delete “' + act.title + '”?')) onDelete(act.id); }}>Delete</button>`}
+      <button class="btn primary" style=${{ flex:1, opacity: valid ? 1 : .5 }} disabled=${!valid} onClick=${save}>${act ? 'Save changes' : 'Add plan'}</button>
+    </div>
+  <//>`;
+}
+function DayEditor({ day, onSave, onClose }){
+  const [f, setF] = useState({ title:day.title, area:day.area, city:day.city, stay:day.stay, food:(day.food || []).join(', ') });
+  const set = (k) => (e) => setF(x => ({ ...x, [k]: e.target.value }));
+  return html`<${Sheet} title=${'Edit day ' + day.n + ' · ' + fmt(day.date)} onClose=${onClose}>
+    <${Field} label="Day title"><input value=${f.title} onInput=${set('title')} placeholder="e.g. Palaces and night market" /><//>
+    <div class="grid grid-cols-2 gap-3">
+      <${Field} label="City"><select value=${f.city} onChange=${set('city')}><option value="">Travel day</option>${SETUP.cities.map(c => html`<option key=${c} value=${c}>${c}</option>`)}</select><//>
+      <${Field} label="Area"><input value=${f.area} onInput=${set('area')} /><//>
+    </div>
+    ${SETUP.cities.length === 0 && html`<p class="faint" style=${{ fontSize:12.5, margin:'6px 0 0' }}>Add cities in Trip setup to tag days by city.</p>`}
+    <${Field} label="Staying at"><input value=${f.stay} onInput=${set('stay')} /><//>
+    <${Field} label="Food spots (comma-separated)"><input value=${f.food} onInput=${set('food')} /><//>
+    <button class="btn primary w-full" style=${{ marginTop:18 }} onClick=${() => onSave({ title:f.title.trim(), area:f.area.trim(), city:f.city, stay:f.stay.trim(), food:f.food.split(',').map(x => x.trim()).filter(Boolean) })}>Save day</button>
+  <//>`;
+}
+
+/* ---------- weather (doc weather/forecast, filled by a scheduled task) ---------- */
+const WX = { data:null, subs:new Set(), started:false };
+function useWeather(){
+  const [d, setD] = useState(WX.data);
+  useEffect(() => {
+    WX.subs.add(setD); setD(WX.data);
+    if (!WX.started) { WX.started = true; getDb().then(db => { if (!db) return; try { db.doc('weather/forecast').onSnapshot(snap => { WX.data = snap.exists ? (snap.data() || null) : null; WX.subs.forEach(f => f(WX.data)); }, () => {}); } catch(e){} }); }
+    return () => WX.subs.delete(setD);
+  }, []);
+  return d;
+}
+const WX_ICON = { sun:'Sun', partly:'CloudSun', cloud:'Cloud', rain:'CloudRain', snow:'Cloud' };
+const wxFor = (data, date) => { const f = data && data.days && data.days[date]; return f && typeof f.hi === 'number' ? f : null; };
+const fmtWhen = (s) => { try { return new Date(s).toLocaleString('en-GB', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' }); } catch(e){ return ''; } };
+function WxChip({ date }){
+  const w = wxFor(useWeather(), date); if (!w) return null;
+  const Ic = I(WX_ICON[w.sky] || 'CloudSun');
+  return html`<span class="flex items-center gap-1" title=${w.text || 'Forecast'} style=${{ fontSize:12.5, color:'var(--ink2)', fontWeight:600 }}><${Ic} size=${14} />${w.hi}°${typeof w.lo === 'number' ? '/' + w.lo + '°' : ''}${typeof w.rain === 'number' && w.rain >= 30 ? html`<span style=${{ color:'#3b82c4' }}> · ${w.rain}%</span>` : ''}</span>`;
+}
+function WeatherStrip(){
+  const data = useWeather(); const Th = I('Thermometer');
+  const days = DAYS.filter(d => daysUntil(d.date) >= 0);
+  if (!days.length) return null;
+  const n = days.filter(d => wxFor(data, d.date)).length;
+  return html`<div class="surface" style=${{ marginBottom:12, padding:'14px 0 12px' }}>
+    <div class="flex items-center justify-between gap-2" style=${{ padding:'0 16px' }}>
+      <div class="flex items-center gap-2" style=${{ fontWeight:700, fontSize:14.5 }}><${Th} size=${16} />Trip weather</div>
+      <span class="faint" style=${{ fontSize:11.5 }}>${n ? 'Updated ' + fmtWhen(data.updated) : 'No forecast yet'}</span>
+    </div>
+    <div class="scroller flex gap-2" style=${{ padding:'10px 16px 2px' }}>
+      ${days.map(d => { const w = wxFor(data, d.date); const Ic = I(w ? WX_ICON[w.sky] || 'CloudSun' : 'Thermometer'); return html`<div key=${d.date} style=${{ flex:'none', width:74, textAlign:'center', padding:'8px 4px', borderRadius:12, background: w ? 'var(--sunk)' : 'transparent', border:'1px solid var(--line)' }}>
+        <div style=${{ fontSize:11.5, fontWeight:600 }}>${fmt(d.date, { weekday:'short', day:'numeric' })}</div>
+        <div class="faint" style=${{ fontSize:10.5, whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>${d.city || '—'}</div>
+        <div style=${{ margin:'5px 0 3px', display:'flex', justifyContent:'center', color: w ? 'var(--ink2)' : 'var(--line)' }}><${Ic} size=${20} /></div>
+        <div style=${{ fontSize:14, fontWeight:700 }}>${w ? w.hi + '°' : '–'}</div>
+        <div class="faint" style=${{ fontSize:12 }}>${w && typeof w.lo === 'number' ? w.lo + '°' : ''}</div>
+        ${w && typeof w.rain === 'number' && html`<div style=${{ fontSize:11, color: w.rain >= 50 ? '#3b82c4' : 'var(--ink3)', fontWeight: w.rain >= 50 ? 700 : 400 }}>☂ ${w.rain}%</div>`}
+      </div>`; })}
+    </div>
+    <p class="faint" style=${{ fontSize:11.5, margin:'8px 16px 0' }}>${n ? 'Forecasts fill in each morning, about a week before each day.' : 'Ask Claude to set up a daily weather update for this trip, and forecasts will appear here and on each day.'}</p>
+  </div>`;
+}
+
+/* ---------- day card ---------- */
+const normText = (t) => (t || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[’']/g, '');
+function DayCard({ day, open, onToggle, done, toggleDone, note, setNote, filter, match, editing, onEditAct, onAddAct, onEditDay }){
+  const Chevron = I('ChevronDown'), Bed = I('BedDouble'), Check = I('Check'), Cal = I('CalendarPlus'), Utensils = I('UtensilsCrossed'), Pencil = I('Pencil'), Plus = I('Plus');
+  const acts = day.acts.filter(a => filter.every(f => (a.tags || []).includes(f)) && (!match || match(a, day)));
+  const dDone = day.acts.filter(a => done[a.id]).length;
+  const st = tripState(); const isToday = st.phase === 'during' && st.day === day.n;
+  return html`<li id=${'day-' + day.n} class="relative" style=${{ paddingLeft:64, marginBottom:14, listStyle:'none', scrollMarginTop:16 }}>
+    <div class="absolute flex flex-col items-center" style=${{ left:0, top:14, width:56 }}>
+      <span class="daynum" style=${{ color: isToday ? 'var(--sakura)' : 'var(--ink)' }}>${day.n}</span>
+      <span class="faint" style=${{ fontSize:11, marginTop:4 }}>${fmt(day.date, { day:'numeric', month:'short' })}</span>
+      <span style=${{ width:7, height:7, borderRadius:'50%', marginTop:8, background: day.acts.length && dDone === day.acts.length ? 'var(--moss)' : (dDone ? 'var(--sakura)' : 'var(--line)') }}></span>
+    </div>
+    <div class="surface" style=${{ ...cityVars(day.city), overflow:'hidden', borderColor: isToday ? 'var(--sakura)' : 'var(--line)', borderLeft:'4px solid var(--cc)' }}>
+      <button onClick=${onToggle} aria-expanded=${open} class="w-full text-left" style=${{ background:'none', border:0, padding:'14px 16px', cursor:'pointer', display:'block' }}>
+        <div class="flex items-start justify-between gap-3">
+          <div style=${{ minWidth:0 }}>
+            <div class="flex items-center gap-2 flex-wrap faint" style=${{ fontSize:12.5 }}>
+              <span class="city-chip">${cityLabel(day.city)}</span>
+              <span>${fmt(day.date, { weekday:'long' })}</span>
+              ${day.area && html`<span>·</span>`}${day.area && html`<span>${day.area}</span>`}
+              ${isToday && html`<span class="tag must">Today</span>`}
+              <${WxChip} date=${day.date} />
+            </div>
+            <h3 class="serif" style=${{ margin:'4px 0 0', fontSize:19, fontWeight:700, lineHeight:1.35, color: day.title ? 'var(--ink)' : 'var(--ink3)' }}>${day.title || (day.acts.length ? day.acts.length + (day.acts.length === 1 ? ' plan' : ' plans') : 'Nothing planned yet')}</h3>
+            ${day.stay && html`<div class="flex items-center gap-1 muted" style=${{ fontSize:13, marginTop:6 }}><${Bed} size=${14} /><span>${day.stay}</span></div>`}
+          </div>
+          <${motion.span} animate=${{ rotate: open ? 180 : 0 }} transition=${{ duration:.25 }} style=${{ display:'inline-flex', marginTop:4, color:'var(--ink3)' }}><${Chevron} size=${20} /><//>
+        </div>
+      </button>
+      <${AnimatePresence} initial=${false}>
+        ${open && html`<${motion.div} key="body" initial=${{ height:0, opacity:0 }} animate=${{ height:'auto', opacity:1 }} exit=${{ height:0, opacity:0 }} transition=${{ duration:.28 }} style=${{ overflow:'hidden' }}>
+          <div style=${{ padding:'0 16px 16px', borderTop:'1px solid var(--line)' }}>
+            ${day.acts.length === 0 && html`<p class="faint" style=${{ fontSize:13.5, marginTop:14 }}>${editing ? 'Add your first plan for this day.' : 'No plans yet — tap Edit at the top to add some.'}</p>`}
+            ${day.acts.length > 0 && acts.length === 0 && html`<p class="faint" style=${{ fontSize:13.5, marginTop:14 }}>No plans on this day match your filters.</p>`}
+            <ol style=${{ margin:0, padding:0 }}>
+              ${acts.map(a => html`<li key=${a.id} class=${'flex gap-3' + (done[a.id] ? ' done' : '')} style=${{ listStyle:'none', padding:'14px 0', borderBottom:'1px dashed var(--line)' }}>
+                <button class="check" role="checkbox" aria-checked=${!!done[a.id]} aria-label=${'Mark ' + a.title + ' done'} onClick=${() => toggleDone(a.id)}>${done[a.id] && html`<${Check} size=${13} strokeWidth=${3} />`}</button>
+                <div style=${{ minWidth:0, flex:1 }}>
+                  <div class="flex items-baseline justify-between gap-2">
+                    <span class="faint" style=${{ fontSize:12.5, fontVariantNumeric:'tabular-nums' }}>${a.label || (a.start + '–' + a.end)}</span>
+                    ${editing ? html`<button class="btn" style=${{ padding:'4px 10px', fontSize:12.5 }} onClick=${() => onEditAct(a)} aria-label=${'Edit ' + a.title}><${Pencil} size=${13} />Edit</button>`
+                      : html`<a href=${gcalLink(a, day)} target="_blank" rel="noopener" class="faint" aria-label=${'Add ' + a.title + ' to Google Calendar'} style=${{ display:'inline-flex' }}><${Cal} size=${15} /></a>`}
+                  </div>
+                  <div class="act-title" style=${{ fontWeight:500, marginTop:1 }}>${a.title}</div>
+                  ${(a.tags || []).some(t => TAG_LABEL[t]) && html`<div class="flex flex-wrap gap-1" style=${{ marginTop:4 }}>${a.tags.filter(t => TAG_LABEL[t]).map(t => html`<${Tag} key=${t} id=${t} />`)}</div>`}
+                  ${a.desc && html`<p class="muted" style=${{ margin:'3px 0 0', fontSize:13.5 }}>${a.desc}</p>`}
+                  ${a.note && html`<p style=${{ margin:'4px 0 0', fontSize:13, color:'var(--moss)' }}>${a.note}</p>`}
+                  ${placeQueries(a, day).length > 0 && html`<div class="flex flex-wrap gap-1" style=${{ marginTop:7 }}>${placeQueries(a, day).map(q => html`<${MapChip} key=${q} q=${q} />`)}</div>`}
+                </div>
+              </li>`)}
+            </ol>
+            ${editing && html`<div class="grid grid-cols-2 gap-2" style=${{ marginTop:12 }}>
+              <button class="btn primary" onClick=${onAddAct}><${Plus} size=${16} />Add plan</button>
+              <button class="btn" onClick=${onEditDay}><${Pencil} size=${15} />Edit day</button>
+            </div>`}
+            ${(day.food || []).length > 0 && html`<div class="flex items-start gap-2 muted" style=${{ fontSize:13.5, marginTop:14 }}><${Utensils} size=${15} style=${{ marginTop:3, flex:'none' }} /><span><span class="faint">Food spots: </span>${day.food.join(', ')}</span></div>`}
+            <label class="block" style=${{ marginTop:14 }}>
+              <span class="faint" style=${{ fontSize:12.5 }}>Your notes for day ${day.n}</span>
+              <textarea rows="2" value=${note || ''} placeholder="Confirmation numbers, addresses, what you loved…" onInput=${e => setNote(e.target.value)} style=${{ marginTop:6, resize:'vertical' }}></textarea>
+            </label>
+          </div>
+        <//>`}
+      <//>
+    </div>
+  </li>`;
+}
+
+/* ---------- next up ---------- */
+const atTime = (d, t) => { const [y,m,dd] = d.split('-').map(Number); const [h,mi] = (t || '00:00').split(':').map(Number); return new Date(y, m-1, dd, h || 0, mi || 0); };
+function findNext(done, now){
+  const items = ALL_ACTS.map(a => { const d = a.date || a.day.date, st = atTime(d, a.start); let en = atTime(d, a.end || a.start); if (en <= st) en = new Date(st.getTime() + 30 * 6e4); return { a, st, en }; }).sort((x, y) => x.st - y.st);
+  const cur = items.find(x => x.st <= now && now < x.en && !done[x.a.id]) || null;
+  const nxt = items.find(x => x.st > now && !done[x.a.id] && (!cur || x.a.id !== cur.a.id)) || null;
+  return { cur, nxt };
+}
+const until = (ms) => { const m = Math.round(ms / 6e4); if (m < 1) return 'now'; if (m < 60) return 'in ' + m + ' min'; const h = Math.floor(m / 60), r = m % 60; if (h < 24) return 'in ' + h + ' h' + (r ? ' ' + r + ' min' : ''); const d = Math.round(ms / 864e5); return 'in ' + d + (d === 1 ? ' day' : ' days'); };
+function NextUp({ done, toggleDone, onGo }){
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => { const t = setInterval(() => setNow(new Date()), 30000); return () => clearInterval(t); }, []);
+  const { cur, nxt } = findNext(done, now);
+  if (!cur && !nxt) return null;
+  const Nav = I('Navigation'), Check = I('Check'), Clock = I('Clock');
+  const Row = ({ x, kind }) => { const a = x.a, q = placeQueries(a, a.day)[0]; const left = kind === 'now' ? Math.round((x.en - now) / 6e4) : null;
+    return html`<div style=${{ ...cityVars(a.day.city), padding:'14px 16px', borderLeft:'4px solid var(--cc)', borderTop: kind === 'next' && cur ? '1px solid var(--line)' : 0 }}>
+      <div class="flex items-center justify-between gap-2">
+        <span style=${{ fontSize:11.5, fontWeight:700, letterSpacing:'.08em', textTransform:'uppercase', color: kind === 'now' ? 'var(--sakura)' : 'var(--ink3)' }}>${kind === 'now' ? 'Happening now' : 'Next up'}</span>
+        <span class="faint flex items-center gap-1" style=${{ fontSize:12.5 }}><${Clock} size=${13} />${kind === 'now' ? (left >= 60 ? 'ends ' + a.end : left + ' min left') : until(x.st - now)}</span>
+      </div>
+      <button onClick=${() => onGo(a.day.n)} class="text-left" style=${{ background:'none', border:0, padding:0, marginTop:6, cursor:'pointer', color:'var(--ink)', display:'block', width:'100%' }}>
+        <div class="serif" style=${{ fontSize:18, fontWeight:700, lineHeight:1.3 }}>${a.title}</div>
+        <div class="muted" style=${{ fontSize:13, marginTop:3 }}>${fmt(a.date || a.day.date)} · ${a.start}–${a.end} · Day ${a.day.n}${a.day.city ? ', ' + a.day.city : ''}</div>
+      </button>
+      <div class="flex gap-2" style=${{ marginTop:10 }}>
+        ${q && html`<a class="btn primary" style=${{ padding:'7px 12px', fontSize:13 }} href=${mapsUrl(q)} target="_blank" rel="noopener"><${Nav} size=${14} />Directions</a>`}
+        <button class="btn" style=${{ padding:'7px 12px', fontSize:13 }} onClick=${() => toggleDone(a.id)}><${Check} size=${14} />Done</button>
+      </div>
+    </div>`; };
+  return html`<div class="surface" style=${{ marginTop:16, overflow:'hidden' }} aria-live="polite">${cur && html`<${Row} x=${cur} kind="now" />`}${nxt && html`<${Row} x=${nxt} kind="next" />`}</div>`;
+}
+
+/* ---------- itinerary tab ---------- */
+function Timeline({ done, toggleDone, notes, setNotes, toast, editItin, cityF, setCityF, onSetup }){
+  const st = tripState();
+  const Pencil = I('Pencil'), Search = I('Search'), XIcon = I('X');
+  const [editing, setEditing] = useState(false);
+  const [sheet, setSheet] = useState(null);
+  const closeSheet = useCallback(() => setSheet(null), []);
+  const [open, setOpen] = usePersist('open', st.phase === 'during' ? [st.day] : [0]);
+  const [filter, setFilter] = useState([]);
+  const [q, setQ] = useState('');
+  if (st.phase === 'unset') return html`<${Empty} icon="Plane" title="Plan a new trip" body="Start with the basics — name, dates and cities. You can fill in each day yourself, or ask Claude to plan it and fill this app for you.">
+    <button class="btn primary" onClick=${onSetup}>Set up the trip</button>
+  <//>`;
+  const terms = normText(q).split(/\s+/).filter(Boolean);
+  const match = terms.length ? (a, d) => { const h = normText([a.title, a.desc, a.label, a.note, a.place, a.start, (a.tags || []).map(t => TAG_LABEL[t]).join(' '), d.title, d.area, d.city, d.stay, (d.food || []).join(' '), 'day ' + d.n, fmt(d.date, { day:'numeric', month:'short' }), fmt(d.date, { weekday:'long' }), notes[d.n]].join(' ')); return terms.every(t => h.includes(t)); } : null;
+  const actOK = (a, d) => filter.every(f => (a.tags || []).includes(f)) && (!match || match(a, d));
+  const narrowing = filter.length > 0 || terms.length > 0;
+  const days = (narrowing ? DAYS.filter(d => d.acts.some(a => actOK(a, d))) : DAYS).filter(d => !cityF || d.city === cityF);
+  const shownOpen = narrowing ? days.map(d => d.n) : open;
+  const hits = narrowing ? days.reduce((n, d) => n + d.acts.filter(a => actOK(a, d)).length, 0) : 0;
+  const allOpen = open.length >= DAYS.length;
+  const goDay = (n) => { setCityF(null); setQ(''); setFilter([]); setOpen(o => o.includes(n) ? o : [...o, n]); setTimeout(() => { const el = document.getElementById('day-' + n); if (el) el.scrollIntoView({ behavior:'smooth', block:'start' }); }, 80); };
+  const planned = ALL_ACTS.length;
+  return html`<section aria-labelledby="tl-h">
+    <${H2} id="tl-h" icon="CalendarDays" right=${html`<div class="flex items-center gap-3">
+      <button class="faint" style=${{ background:'none', border:0, fontSize:13, cursor:'pointer' }} onClick=${() => setOpen(allOpen ? [] : DAYS.map(d => d.n))}>${allOpen ? 'Collapse all' : 'Expand all'}</button>
+      <button class=${'btn' + (editing ? ' primary' : '')} style=${{ padding:'6px 12px', fontSize:13 }} aria-pressed=${editing} onClick=${() => setEditing(e => !e)}>${editing ? 'Done' : html`<${Pencil} size=${14} />Edit`}</button>
+    </div>`}>Itinerary<//>
+    ${planned === 0 && !editing && html`<p class="surface" style=${{ margin:'14px 0 0', padding:'12px 14px', fontSize:13.5, background:'var(--sakura-wash)', borderColor:'var(--sakura-soft)' }}>Your ${DAYS.length} days are ready to fill. Tap <b>Edit</b>, open a day and add plans — or ask Claude to plan the trip and fill it in for you.</p>`}
+    <div class="relative" style=${{ marginTop:16 }}>
+      <span style=${{ position:'absolute', left:12, top:'50%', transform:'translateY(-50%)', color:'var(--ink3)', display:'inline-flex' }}><${Search} size=${16} /></span>
+      <input type="search" value=${q} onInput=${e => setQ(e.target.value)} placeholder="Search plans — places, food, a date, Day 3" aria-label="Search the itinerary" style=${{ paddingLeft:36, paddingRight:36 }} />
+      ${q && html`<button onClick=${() => setQ('')} aria-label="Clear search" style=${{ position:'absolute', right:8, top:'50%', transform:'translateY(-50%)', background:'none', border:0, padding:6, cursor:'pointer', color:'var(--ink3)', display:'inline-flex' }}><${XIcon} size=${16} /></button>`}
+    </div>
+    ${!narrowing && !cityF && html`<${NextUp} done=${done} toggleDone=${toggleDone} onGo=${goDay} />`}
+    ${cityF && html`<div class="flex items-center gap-2 flex-wrap" style=${{ ...cityVars(cityF), marginTop:12 }}>
+      <span class="city-chip" style=${{ fontSize:13, padding:'3px 12px' }}>${cityF} · ${days.length} ${days.length === 1 ? 'day' : 'days'}</span>
+      <button class="chip" style=${{ borderStyle:'dashed' }} onClick=${() => setCityF(null)}>Show all days</button>
+    </div>`}
+    ${narrowing && days.length > 0 && html`<p class="faint" style=${{ fontSize:12.5, margin:'8px 0 0' }}>${hits} ${hits === 1 ? 'plan' : 'plans'} on ${days.length} ${days.length === 1 ? 'day' : 'days'}</p>`}
+    ${editing && html`<p class="surface" style=${{ margin:'12px 0 0', padding:'10px 14px', fontSize:13.5, background:'var(--sakura-wash)', borderColor:'var(--sakura-soft)' }}>Editing on. Open a day to add, change or delete plans.</p>`}
+    <div class="scroller flex gap-2" style=${{ margin:'14px -18px 18px', padding:'2px 18px' }} role="group" aria-label="Filter plans">
+      ${TAGS.map(t => html`<button key=${t.id} class="chip" aria-pressed=${filter.includes(t.id)} onClick=${() => setFilter(f => f.includes(t.id) ? f.filter(x => x !== t.id) : [...f, t.id])}>${t.label}</button>`)}
+      ${filter.length > 0 && html`<button class="chip" onClick=${() => setFilter([])} style=${{ borderStyle:'dashed' }}>Clear</button>`}
+    </div>
+    ${days.length === 0 && html`<p class="muted">Nothing matches. Try another word or clear the filters.</p>`}
+    <ol class="relative" style=${{ margin:0, padding:0 }}>
+      <div class="rail" aria-hidden="true"></div>
+      ${days.map(d => html`<${DayCard} key=${d.n} day=${d} filter=${filter} match=${match} open=${shownOpen.includes(d.n)}
+        onToggle=${() => setOpen(o => o.includes(d.n) ? o.filter(x => x !== d.n) : [...o, d.n])}
+        done=${done} toggleDone=${toggleDone} note=${notes[d.n]} setNote=${v => setNotes(n => ({ ...n, [d.n]: v }))}
+        editing=${editing} onEditAct=${a => setSheet({ kind:'act', n:d.n, act:a })} onAddAct=${() => setSheet({ kind:'act', n:d.n, act:null })} onEditDay=${() => setSheet({ kind:'day', n:d.n })} />`)}
+    </ol>
+    <${AnimatePresence}>
+      ${sheet && sheet.kind === 'act' && html`<${ActEditor} key="ae" act=${sheet.act} day=${DAYS[sheet.n]} onClose=${closeSheet}
+        onSave=${a => { editItin(ds => ds.map(d => d.n !== sheet.n ? d : { ...d, acts: sortActs(sheet.act ? d.acts.map(x => x.id === a.id ? a : x) : [...d.acts, a], d) })); setSheet(null); toast(sheet.act ? 'Plan updated' : 'Plan added'); }}
+        onDelete=${id => { editItin(ds => ds.map(d => d.n !== sheet.n ? d : { ...d, acts: d.acts.filter(x => x.id !== id) })); setSheet(null); toast('Plan deleted'); }} />`}
+      ${sheet && sheet.kind === 'day' && html`<${DayEditor} key="de" day=${DAYS[sheet.n]} onClose=${closeSheet}
+        onSave=${patch => { editItin(ds => ds.map(d => d.n !== sheet.n ? d : { ...d, ...patch })); setSheet(null); toast('Day updated'); }} />`}
+    <//>
+  </section>`;
+}
+
+/* ---------- generic list editor ---------- */
+function ListEditor({ title, fields, item, onSave, onDelete, onClose }){
+  const [f, setF] = useState(() => { const o = {}; fields.forEach(x => { o[x.k] = item && item[x.k] != null ? String(item[x.k]) : (x.def || ''); }); return o; });
+  const set = (k) => (e) => setF(x => ({ ...x, [k]: e.target.value }));
+  const valid = fields.filter(x => x.req).every(x => String(f[x.k] || '').trim());
+  const rows = []; let pair = [];
+  fields.forEach(x => { if (x.half) { pair.push(x); if (pair.length === 2) { rows.push(pair); pair = []; } } else { if (pair.length) { rows.push(pair); pair = []; } rows.push([x]); } });
+  if (pair.length) rows.push(pair);
+  const input = (x) => x.type === 'select' ? html`<select value=${f[x.k]} onChange=${set(x.k)}>${x.opts.map(([v, l]) => html`<option key=${v} value=${v}>${l}</option>`)}</select>`
+    : x.type === 'area' ? html`<textarea rows="3" value=${f[x.k]} onInput=${set(x.k)} placeholder=${x.ph || ''}></textarea>`
+    : html`<input type=${x.type || 'text'} value=${f[x.k]} onInput=${set(x.k)} placeholder=${x.ph || ''} />`;
+  return html`<${Sheet} title=${title} onClose=${onClose}>
+    ${rows.map((r, i) => r.length === 2 ? html`<div key=${i} class="grid grid-cols-2 gap-3">${r.map(x => html`<${Field} key=${x.k} label=${x.l}>${input(x)}<//>`)}</div>` : html`<${Field} key=${r[0].k} label=${r[0].l}>${input(r[0])}<//>`)}
+    <div class="flex gap-2" style=${{ marginTop:18 }}>
+      ${item && html`<button class="btn" style=${{ color:'var(--momiji)' }} onClick=${() => { if (confirm('Delete this?')) onDelete(item.id); }}>Delete</button>`}
+      <button class="btn primary" style=${{ flex:1, opacity: valid ? 1 : .5 }} disabled=${!valid} onClick=${() => { const o = { id:(item && item.id) || ('i' + Date.now().toString(36)) }; fields.forEach(x => { o[x.k] = String(f[x.k] || '').trim(); }); onSave(o); }}>${item ? 'Save' : 'Add'}</button>
+    </div>
+  <//>`;
+}
+const useListSheet = (setList, toast, noun) => {
+  const [sheet, setSheet] = useState(null);
+  const close = useCallback(() => setSheet(null), []);
+  const save = (o) => { setList(l => { const has = (l || []).some(x => x.id === o.id); return has ? l.map(x => x.id === o.id ? { ...x, ...o } : x) : [...(l || []), o]; }); toast(sheet && sheet.item ? noun + ' updated' : noun + ' added'); setSheet(null); };
+  const del = (id) => { setList(l => (l || []).filter(x => x.id !== id)); toast(noun + ' deleted'); setSheet(null); };
+  return { sheet, setSheet, close, save, del };
+};
+
+/* ---------- bookings ---------- */
+const STATUS = { pending:'Pending', booked:'Booked', action:'Action Required' };
+const NEXT = { pending:'booked', booked:'action', action:'pending' };
+const ESCALATE_DAYS = 7;
+const effStatus = (b) => (b.status || 'pending') === 'pending' && b.deadline && daysUntil(b.deadline) <= ESCALATE_DAYS ? { s:'action', auto:true } : { s:b.status || 'pending', auto:false };
+const BK_FIELDS = [
+  { k:'title', l:'What', req:true, ph:'e.g. Flight SIN → ICN' },
+  { k:'via', l:'Booked via', half:true, ph:'Airline, Klook, hotel…' }, { k:'ref', l:'Reference', half:true, ph:'Booking number' },
+  { k:'date', l:'Date it’s for', type:'date', half:true }, { k:'deadline', l:'Book / pay by (optional)', type:'date', half:true },
+  { k:'status', l:'Status', type:'select', def:'pending', opts:[['pending','Pending'],['booked','Booked'],['action','Action required']] },
+  { k:'note', l:'Notes', type:'area', ph:'Times, seats, what to bring' },
+];
+function Bookings({ bookings, setBookings, toast }){
+  const Plus = I('Plus'), Clock = I('Clock'), Zap = I('Zap'), Pencil = I('Pencil');
+  const L = useListSheet(setBookings, toast, 'Booking');
+  const rows = (bookings || []).map(b => { const e = effStatus(b); return { ...b, s:e.s, auto:e.auto }; });
+  const order = { action:0, pending:1, booked:2 };
+  rows.sort((a, b) => order[a.s] - order[b.s] || (a.deadline || a.date || '9').localeCompare(b.deadline || b.date || '9'));
+  const counts = { action: rows.filter(r => r.s === 'action').length, pending: rows.filter(r => r.s === 'pending').length, booked: rows.filter(r => r.s === 'booked').length };
+  const next = rows.filter(r => r.s !== 'booked' && r.deadline).sort((a, b) => a.deadline.localeCompare(b.deadline))[0];
+  const cycle = (b) => setBookings(l => l.map(x => x.id === b.id ? { ...x, status: b.auto ? 'booked' : NEXT[b.s] } : x));
+  return html`<section aria-labelledby="bk-h">
+    <${H2} id="bk-h" icon="Ticket" right=${html`<button class="btn" style=${{ padding:'6px 12px', fontSize:13 }} onClick=${() => L.setSheet({ item:null })}><${Plus} size=${14} />Add</button>`}>Bookings<//>
+    <p class="muted" style=${{ margin:'6px 0 0', fontSize:14 }}>Tap a status to change it. Anything pending moves to Action Required on its own once its book-by date is ${ESCALATE_DAYS} days away.</p>
+    ${rows.length === 0 && html`<${Empty} icon="Ticket" title="No bookings yet" body="Add flights, hotels, tickets and tables — with a book-by date if there’s a deadline."><button class="btn primary" onClick=${() => L.setSheet({ item:null })}><${Plus} size=${16} />Add a booking</button><//>`}
+    ${next && html`<div class="surface" style=${{ marginTop:16, padding:18, background:'var(--sakura-wash)', borderColor:'var(--sakura-soft)' }}>
+      <div class="faint" style=${{ fontSize:12.5 }}>Next deadline</div>
+      <div class="flex items-end justify-between gap-3" style=${{ marginTop:4 }}>
+        <div><div class="serif" style=${{ fontSize:20, fontWeight:700 }}>${next.title}</div><div class="muted" style=${{ fontSize:13.5 }}>Book by ${fmt(next.deadline)}${next.via ? ' · ' + next.via : ''}</div></div>
+        <div class="text-right"><div class="serif" style=${{ fontSize:38, fontWeight:700, lineHeight:1, color:'var(--sakura)' }}>${Math.max(daysUntil(next.deadline), 0)}</div><div class="faint" style=${{ fontSize:12 }}>${daysUntil(next.deadline) < 0 ? 'overdue' : 'days'}</div></div>
+      </div>
+    </div>`}
+    ${rows.length > 0 && html`<div class="flex gap-2 flex-wrap" style=${{ marginTop:16 }}>
+      <span class="badge action" style=${{ cursor:'default' }}><span class="dot"></span>${counts.action} action required</span>
+      <span class="badge pending" style=${{ cursor:'default' }}><span class="dot"></span>${counts.pending} pending</span>
+      <span class="badge booked" style=${{ cursor:'default' }}><span class="dot"></span>${counts.booked} booked</span>
+    </div>`}
+    <ul style=${{ margin:'16px 0 0', padding:0 }}>
+      ${rows.map(b => { const d = b.deadline ? daysUntil(b.deadline) : null; const overdue = d != null && d < 0 && b.s !== 'booked';
+        return html`<li key=${b.id} class="surface" style=${{ listStyle:'none', padding:16, marginBottom:10 }}>
+          <div class="flex items-start justify-between gap-3">
+            <div style=${{ minWidth:0 }}><div style=${{ fontWeight:700 }}>${b.title}</div><div class="faint" style=${{ fontSize:12.5, marginTop:2 }}>${[b.via, b.date ? 'for ' + fmt(b.date) : '', b.ref ? 'ref ' + b.ref : ''].filter(Boolean).join(' · ')}</div></div>
+            <button class=${'badge ' + b.s} onClick=${() => cycle(b)} aria-label=${'Status: ' + STATUS[b.s] + '. Tap to change.'}><span class="dot"></span>${STATUS[b.s]}</button>
+          </div>
+          ${b.s !== 'booked' && d != null && html`<div class="flex items-center gap-2 muted" style=${{ fontSize:13.5, marginTop:10 }}><${Clock} size=${14} /><span style=${{ color: overdue ? 'var(--momiji)' : 'inherit', fontWeight: overdue || d <= 7 ? 600 : 400 }}>Book by ${fmt(b.deadline)} — ${d > 0 ? 'in ' + d + (d === 1 ? ' day' : ' days') : d === 0 ? 'today' : Math.abs(d) + ' days ago'}</span></div>`}
+          ${b.auto && html`<div class="flex items-center gap-1" style=${{ fontSize:12.5, marginTop:4, color:'var(--momiji)', fontWeight:600 }}><${Zap} size=${12} />Due soon — moved up automatically.</div>`}
+          ${b.note && html`<p class="muted" style=${{ fontSize:13, margin:'8px 0 0', whiteSpace:'pre-wrap' }}>${b.note}</p>`}
+          <button class="faint flex items-center gap-1" style=${{ background:'none', border:0, padding:0, marginTop:8, fontSize:12.5, cursor:'pointer' }} onClick=${() => L.setSheet({ item:b })}><${Pencil} size=${12} />Edit</button>
+        </li>`; })}
+    </ul>
+    <${AnimatePresence}>${L.sheet && html`<${ListEditor} key="bk" title=${L.sheet.item ? 'Edit booking' : 'Add a booking'} fields=${BK_FIELDS} item=${L.sheet.item} onSave=${L.save} onDelete=${L.del} onClose=${L.close} />`}<//>
+  </section>`;
+}
+
+/* ---------- hotels ---------- */
+const HT_FIELDS = [
+  { k:'name', l:'Hotel', req:true, ph:'Name as on the booking' },
+  { k:'city', l:'City', half:true }, { k:'phone', l:'Phone', half:true },
+  { k:'checkIn', l:'Check-in', type:'date', half:true }, { k:'checkOut', l:'Check-out', type:'date', half:true },
+  { k:'address', l:'Address', ph:'Paste the full address for accurate maps' },
+  { k:'ref', l:'Booking reference' },
+  { k:'note', l:'Notes', type:'area', ph:'Check-in time, breakfast, how to get there' },
+];
+function Hotels({ hotels, setHotels, toast }){
+  const Plus = I('Plus'), Pin = I('MapPin'), Nav = I('Navigation'), Phone = I('Phone'), Pencil = I('Pencil'), Copy = I('Copy');
+  const L = useListSheet(setHotels, toast, 'Hotel');
+  const rows = (hotels || []).slice().sort((a, b) => (a.checkIn || '9').localeCompare(b.checkIn || '9'));
+  const nights = (h) => h.checkIn && h.checkOut ? Math.max(0, Math.round((parse(h.checkOut) - parse(h.checkIn)) / 864e5)) : null;
+  return html`<section aria-labelledby="ht-h">
+    <${H2} id="ht-h" icon="BedDouble" right=${html`<button class="btn" style=${{ padding:'6px 12px', fontSize:13 }} onClick=${() => L.setSheet({ item:null })}><${Plus} size=${14} />Add</button>`}>Hotels<//>
+    ${rows.length === 0 && html`<${Empty} icon="BedDouble" title="No hotels yet" body="Add where you’re staying to get one-tap maps, directions and the address to show a taxi driver."><button class="btn primary" onClick=${() => L.setSheet({ item:null })}><${Plus} size=${16} />Add a hotel</button><//>`}
+    ${rows.map(h => { const q = h.address || [h.name, h.city].filter(Boolean).join(', '); const n = nights(h);
+      return html`<div key=${h.id} class="surface" style=${{ ...cityVars(h.city), marginTop:14, padding:16, borderLeft:'4px solid var(--cc)' }}>
+        <div class="flex items-start justify-between gap-3">
+          <div style=${{ minWidth:0 }}>
+            ${h.city && html`<span class="city-chip">${h.city}</span>`}
+            <div class="serif" style=${{ fontWeight:700, fontSize:18, marginTop:4 }}>${h.name}</div>
+            <div class="muted" style=${{ fontSize:13.5 }}>${h.checkIn ? fmt(h.checkIn) : '—'} → ${h.checkOut ? fmt(h.checkOut) : '—'}${n != null ? ' · ' + n + (n === 1 ? ' night' : ' nights') : ''}</div>
+          </div>
+          <button class="faint" style=${{ background:'none', border:0, padding:4, cursor:'pointer' }} onClick=${() => L.setSheet({ item:h })} aria-label=${'Edit ' + h.name}><${Pencil} size=${15} /></button>
+        </div>
+        ${h.address && html`<p style=${{ fontSize:13.5, margin:'10px 0 0' }}>${h.address}</p>`}
+        ${(h.ref || h.note) && html`<p class="muted" style=${{ fontSize:13, margin:'6px 0 0', whiteSpace:'pre-wrap' }}>${h.ref ? 'Ref ' + h.ref + (h.note ? '\n' : '') : ''}${h.note || ''}</p>`}
+        <div class="flex flex-wrap gap-2" style=${{ marginTop:12 }}>
+          <a class="btn primary" style=${{ padding:'8px 12px', fontSize:13 }} href=${mapsUrl(q)} target="_blank" rel="noopener"><${Pin} size=${14} />Map</a>
+          <a class="btn" style=${{ padding:'8px 12px', fontSize:13 }} href=${dirUrl(q)} target="_blank" rel="noopener"><${Nav} size=${14} />Directions</a>
+          ${h.phone && html`<a class="btn" style=${{ padding:'8px 12px', fontSize:13 }} href=${'tel:' + h.phone.replace(/[^\d+]/g, '')}><${Phone} size=${14} />Call</a>`}
+          ${h.address && html`<button class="btn" style=${{ padding:'8px 12px', fontSize:13 }} onClick=${async () => toast(await copyText(h.address) ? 'Address copied' : 'Could not copy')}><${Copy} size=${14} />Copy address</button>`}
+        </div>
+      </div>`; })}
+    <${AnimatePresence}>${L.sheet && html`<${ListEditor} key="ht" title=${L.sheet.item ? 'Edit hotel' : 'Add a hotel'} fields=${HT_FIELDS} item=${L.sheet.item} onSave=${L.save} onDelete=${L.del} onClose=${L.close} />`}<//>
+  </section>`;
+}
+
+/* ---------- food ---------- */
+const FOOD_TYPES = ['Noodles','Rice & mains','Seafood','Street food','Bakery','Cafe & sweets','Fine dining','Market','Other'];
+const FD_FIELDS = [
+  { k:'name', l:'Place', req:true },
+  { k:'city', l:'City', half:true }, { k:'type', l:'Type', type:'select', half:true, def:'Other', opts:FOOD_TYPES.map(t => [t, t]) },
+  { k:'dish', l:'What to order' },
+  { k:'diet', l:'Diet check', type:'select', def:'ok', opts:[['ok','Fine for us'],['ask','Check first'],['avoid','Mostly unsuitable']] },
+  { k:'note', l:'Notes', type:'area', ph:'Hours, booking, queue tips' },
+];
+const DIET = { ok:['low','Fine for us'], ask:['ask','Check first'], avoid:['unknown','Mostly unsuitable'] };
+function Food({ food, setFood, toast }){
+  const Plus = I('Plus'), Pin = I('MapPin'), Pencil = I('Pencil');
+  const L = useListSheet(setFood, toast, 'Place');
+  const [type, setType] = useState('');
+  const rows = (food || []).filter(f => !type || f.type === type);
+  const types = FOOD_TYPES.filter(t => (food || []).some(f => f.type === t));
+  return html`<section aria-labelledby="fd-h">
+    <${H2} id="fd-h" icon="UtensilsCrossed" right=${html`<button class="btn" style=${{ padding:'6px 12px', fontSize:13 }} onClick=${() => L.setSheet({ item:null })}><${Plus} size=${14} />Add</button>`}>Food<//>
+    ${(food || []).length === 0 && html`<${Empty} icon="UtensilsCrossed" title="Your food list is empty" body="Save places you want to eat, what to order, and whether they suit your diet."><button class="btn primary" onClick=${() => L.setSheet({ item:null })}><${Plus} size=${16} />Add a place</button><//>`}
+    ${types.length > 1 && html`<div class="scroller flex gap-2" style=${{ margin:'14px -18px 0', padding:'2px 18px' }}>
+      <button class="chip" aria-pressed=${!type} onClick=${() => setType('')}>All</button>
+      ${types.map(t => html`<button key=${t} class="chip" aria-pressed=${type === t} onClick=${() => setType(type === t ? '' : t)}>${t}</button>`)}
+    </div>`}
+    ${rows.map(f => { const dg = DIET[f.diet] || DIET.ok; return html`<div key=${f.id} class="surface" style=${{ ...cityVars(f.city), marginTop:12, padding:16, borderLeft:'4px solid var(--cc)' }}>
+      <div class="flex items-start justify-between gap-3">
+        <div style=${{ minWidth:0 }}>
+          <div class="flex items-center gap-2 flex-wrap">${f.city && html`<span class="city-chip">${f.city}</span>`}<span class="tag">${f.type || 'Other'}</span><span class=${'risk ' + dg[0]}>${dg[1]}</span></div>
+          <div class="serif" style=${{ fontWeight:700, fontSize:17, marginTop:6 }}>${f.name}</div>
+          ${f.dish && html`<div class="muted" style=${{ fontSize:13.5 }}>${f.dish}</div>`}
+        </div>
+        <button class="faint" style=${{ background:'none', border:0, padding:4, cursor:'pointer' }} onClick=${() => L.setSheet({ item:f })} aria-label=${'Edit ' + f.name}><${Pencil} size=${15} /></button>
+      </div>
+      ${f.note && html`<p class="muted" style=${{ fontSize:13, margin:'8px 0 0', whiteSpace:'pre-wrap' }}>${f.note}</p>`}
+      <div style=${{ marginTop:10 }}><${MapChip} q=${[f.name, f.city].filter(Boolean).join(', ')} label="Google Maps" /></div>
+    </div>`; })}
+    <${AnimatePresence}>${L.sheet && html`<${ListEditor} key="fd" title=${L.sheet.item ? 'Edit place' : 'Add a place'} fields=${FD_FIELDS} item=${L.sheet.item} onSave=${L.save} onDelete=${L.del} onClose=${L.close} />`}<//>
+  </section>`;
+}
+
+/* ---------- map tab ---------- */
+const NEAR_CATS = [['Convenience store','convenience store'],['Pharmacy','pharmacy'],['ATM','ATM'],['Post office','post office'],['Restaurants','restaurants'],['Cafés','cafe'],['Attractions','tourist attractions'],['Supermarket','supermarket']];
+function MapTab({ hotels }){
+  const Map_ = I('Map');
+  const [base, setBase] = useState('');
+  const bases = (hotels || []).map(h => h.address || [h.name, h.city].filter(Boolean).join(', '));
+  const anchor = base || bases[0] || SETUP.cities[0] || SETUP.dest || '';
+  const daysWith = DAYS.filter(d => d.acts.some(a => placeQueries(a, d).length));
+  return html`<section aria-labelledby="mp-h">
+    <${H2} id="mp-h" icon="Map">Maps<//>
+    <p class="muted" style=${{ margin:'6px 0 12px', fontSize:14 }}>Trip weather, places in your plan and quick searches near where you’re staying.</p>
+    <${WeatherStrip} />
+    <div class="surface" style=${{ padding:18, marginBottom:12 }}>
+      <div class="flex items-center gap-2" style=${{ fontWeight:700 }}><${Map_} size=${18} />Places in your plan</div>
+      ${daysWith.length === 0 && html`<p class="muted" style=${{ fontSize:13.5, margin:'6px 0 0' }}>Add a map search to plans in the Itinerary tab and they’ll be listed here by day.</p>`}
+      ${daysWith.map(d => html`<div key=${d.n} style=${{ marginTop:12 }}>
+        <div class="faint" style=${{ fontSize:12, fontWeight:700, letterSpacing:'.06em', textTransform:'uppercase' }}>Day ${d.n} · ${fmt(d.date)}${d.city ? ' · ' + d.city : ''}</div>
+        <div class="flex flex-wrap gap-1" style=${{ marginTop:6 }}>${d.acts.flatMap(a => placeQueries(a, d)).map((q, i) => html`<${MapChip} key=${i} q=${q} />`)}</div>
+      </div>`)}
+    </div>
+    <div class="surface" style=${{ padding:18, marginBottom:12 }}>
+      <div style=${{ fontWeight:700 }}>Find nearby</div>
+      <p class="muted" style=${{ fontSize:13.5, margin:'6px 0 0' }}>Opens Google Maps searching around the place you pick.</p>
+      ${bases.length > 1 && html`<select value=${base || bases[0]} onChange=${e => setBase(e.target.value)} style=${{ marginTop:10 }}>${bases.map(b => html`<option key=${b} value=${b}>${b}</option>`)}</select>`}
+      ${!anchor && html`<p class="faint" style=${{ fontSize:13, margin:'8px 0 0' }}>Add a hotel or a city first.</p>`}
+      ${anchor && html`<div class="flex flex-wrap gap-2" style=${{ marginTop:10 }}>${NEAR_CATS.map(([l, q]) => html`<a key=${l} class="chip" style=${{ textDecoration:'none' }} href=${'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q + ' near ' + anchor)} target="_blank" rel="noopener">${l}</a>`)}</div>`}
+    </div>
+  </section>`;
+}
+
+/* ---------- drive: route legs and road tips ---------- */
+const DRIVE = [
+  { region:'Tasmania', note:'Hobart → Launceston one-way car', legs:[
+    { day:1, route:'Hobart Airport → Hobart', stops:['Hobart Airport','Hobart Tasmania'], km:20, time:'20m', tip:'Straight to the apartment after the red-eye.' },
+    { day:2, route:'Hobart ⇄ kunanyi summit', stops:['Hobart Tasmania','kunanyi Mount Wellington Pinnacle','Hobart Tasmania'], km:45, time:'1h', tip:'Pinnacle Road is narrow and can close for ice or snow — check before you go.' },
+    { day:3, route:'Hobart → Bonorong → Richmond → Hobart', stops:['Hobart Tasmania','Bonorong Wildlife Sanctuary','Richmond Bridge Tasmania','Hobart Tasmania'], km:60, time:'1h', tip:'Short hops; easy morning. The couple’s optional platypus walk is in South Hobart, 5 min from the city.' },
+    { day:4, route:'Hobart → Swansea → Coles Bay', stops:['Hobart Tasmania','Kates Berry Farm','Spiky Bridge','Coles Bay Tasmania'], km:195, time:'2h 40m', tip:'Tasman Highway up the east coast; winding sections and few fuel stops — fill up in Hobart or Swansea.' },
+    { day:5, route:'Coles Bay → Wineglass Bay car park → Bicheno → Coles Bay', stops:['Coles Bay Tasmania','Wineglass Bay Lookout','East Coast Natureworld','Bicheno Blowhole','Coles Bay Tasmania'], km:100, time:'1h 30m', tip:'Bicheno is 35 min each way. Back before dusk — wildlife on the roads.' },
+    { day:6, route:'Coles Bay → Beauty Point → Launceston', stops:['Coles Bay Tasmania','Campbell Town Tasmania','Platypus House Beauty Point','Launceston Tasmania'], km:270, time:'3h 40m', tip:'Longest driving day: 2h 50m to Beauty Point (stop in Campbell Town), then 50 min back to Launceston while the toddler naps.' },
+    { day:7, route:'Launceston → Launceston Airport', stops:['Launceston Tasmania','Launceston Airport'], km:15, time:'15m', tip:'Refuel near the airport and return the car and child seats before the morning flight.' },
+  ]},
+  { region:'Victoria', note:'Melbourne Airport → Melbourne Airport car', legs:[
+    { day:7, route:'Melbourne Airport → Brighton → Phillip Island (Cowes)', stops:['Melbourne Airport','Brighton Bathing Boxes','Phillip Island Chocolate Factory','Cowes Victoria'], km:175, time:'2h 25m', tip:'Includes CityLink tolls — charged to the rental. Leaving Brighton at 2pm keeps you ahead of the evening rush; the toddler naps on the second leg.' },
+    { day:8, route:'Around Phillip Island', stops:['Cowes Victoria','Koala Conservation Reserve','Churchill Island Heritage Farm','Penguin Parade Phillip Island'], km:40, time:'1h', tip:'After the parade, check under the car for penguins before driving off.' },
+    { day:9, route:'Cape Woolamai → St Kilda → CBD', stops:['Cape Woolamai Beach','St Kilda Beach','Melbourne CBD'], km:150, time:'2h', tip:'Derby Day — avoid Flemington. Park at the apartment.' },
+    { day:10, route:'CBD → South Melbourne Market → Middle Park → CBD', stops:['Melbourne CBD','South Melbourne Market','Middle Park Beach','Melbourne CBD'], km:15, time:'30m', tip:'Morning in the CBD on foot or tram; drive only for the afternoon. Market has its own car park.' },
+    { day:11, route:'CBD → DFO South Wharf → Melbourne Airport', stops:['Melbourne CBD','DFO South Wharf','Melbourne Airport'], km:30, time:'40m', tip:'CityLink toll to the airport. Refuel nearby and return the car about 3 h before the night flight.' },
+  ]},
+];
+const ROAD_TIPS = [
+  ['Drive on the left','Highways 100–110 km/h, towns 50–60. Speed cameras are common, including mobile ones.'],
+  ['Avoid dusk and dawn in Tasmania','Wallabies and wombats are on the roads. Every drive in the plan ends before about 6pm.'],
+  ['Fuel','Stations are sparse on the east coast and can close early — fill up in Hobart, Swansea or Bicheno.'],
+  ['Offline maps','Signal is patchy on parts of the east coast. Download offline Google Maps for Tasmania before the trip.'],
+  ['Child seats','By law the 1-year-old rides in a harnessed seat (rear-facing is safest at this age) and the 5-year-old in a forward-facing harness seat or booster (ages 4–7). Hire Australian-standard seats with the car; staff often won’t fit them — allow 15 minutes at pickup.'],
+  ['Melbourne tolls','CityLink and EastLink are cashless; the rental company bills tolls plus an admin fee.'],
+  ['Melbourne CBD','You’ll be driving in the city: watch for hook turns (right turns from the left lane at signed corners), give way to trams, and never pass a tram stopped with its doors open. Parking is expensive — leave the car at the apartment on CBD days.'],
+  ['Two rentals, not one','Rental cars generally can’t go on the Spirit of Tasmania ferry, so return the Tasmania car at Launceston Airport and pick up a second one at Melbourne Airport.'],
+  ['Phones','Hand-held phone use while driving is illegal — set up navigation before you set off.'],
+];
+const dirLink = (stops) => 'https://www.google.com/maps/dir/?api=1&origin=' + encodeURIComponent(stops[0]) + '&destination=' + encodeURIComponent(stops[stops.length - 1]) + (stops.length > 2 ? '&waypoints=' + encodeURIComponent(stops.slice(1, -1).join('|')) : '') + '&travelmode=driving';
+function Drive(){
+  const Nav = I('Navigation'), Car = I('Car'), Clock = I('Clock');
+  return html`<section aria-labelledby="dr-h">
+    <${H2} id="dr-h" icon="Car">Drive<//>
+    <p class="muted" style=${{ margin:'6px 0 12px', fontSize:14 }}>Every driving leg with distance and drive time before stops. Tap a leg for turn-by-turn directions in Google Maps.</p>
+    <div class="grid grid-cols-2 gap-3" style=${{ marginBottom:12 }}>
+      ${DRIVE.map(g => html`<div key=${g.region} class="surface" style=${{ padding:'14px 16px' }}>
+        <div class="faint" style=${{ fontSize:12, fontWeight:700, letterSpacing:'.06em', textTransform:'uppercase' }}>${g.region}</div>
+        <div class="serif" style=${{ fontSize:26, fontWeight:700, lineHeight:1.2, fontVariantNumeric:'tabular-nums' }}>~${g.legs.reduce((n, l) => n + l.km, 0)} km</div>
+        <div class="faint" style=${{ fontSize:12.5 }}>${g.note}</div>
+      </div>`)}
+    </div>
+    ${DRIVE.map(g => html`<div key=${g.region} class="surface" style=${{ padding:'6px 0', marginBottom:12 }}>
+      <div class="flex items-center gap-2" style=${{ fontWeight:700, padding:'10px 16px 4px' }}><${Car} size=${18} />${g.region}</div>
+      ${g.legs.map((l, i) => { const d = DAYS[l.day]; return html`<a key=${i} href=${dirLink(l.stops)} target="_blank" rel="noopener" class="block" style=${{ textDecoration:'none', color:'inherit', padding:'12px 16px', borderTop: i ? '1px dashed var(--line)' : 0 }}>
+        <div class="flex items-center justify-between gap-3">
+          <span class="city-chip" style=${cityVars(d && d.city)}>Day ${l.day}${d ? ' · ' + fmt(d.date, { weekday:'short', day:'numeric' }) : ''}</span>
+          <span class="flex items-center gap-1" style=${{ fontSize:13, fontWeight:600, color:'var(--ink2)', fontVariantNumeric:'tabular-nums', whiteSpace:'nowrap' }}><${Clock} size=${14} />${l.time} · ${l.km} km</span>
+        </div>
+        <div style=${{ fontWeight:600, fontSize:14.5, marginTop:6 }}>${l.route}</div>
+        <div class="muted" style=${{ fontSize:13, marginTop:2 }}>${l.tip}</div>
+        <div class="flex items-center gap-1" style=${{ fontSize:12.5, color:'var(--sakura)', fontWeight:600, marginTop:6 }}><${Nav} size=${13} />Directions</div>
+      </a>`; })}
+    </div>`)}
+    <div class="surface" style=${{ padding:18, marginBottom:12 }}>
+      <div style=${{ fontWeight:700 }}>Driving in Australia</div>
+      <dl class="kv" style=${{ margin:'4px 0 0' }}>${ROAD_TIPS.map(([t, d]) => html`<div key=${t}><dt style=${{ fontWeight:600, color:'var(--ink)', fontSize:13.5 }}>${t}</dt><dd class="muted" style=${{ fontSize:13.5 }}>${d}</dd></div>`)}</dl>
+    </div>
+    <p class="faint" style=${{ fontSize:12, margin:'0 2px' }}>Distances and times are approximate; check live traffic in Google Maps on the day.</p>
+  </section>`;
+}
+
+/* ---------- phrasebook ---------- */
+function speak(text){
+  const ss = window.speechSynthesis; if (!ss || typeof SpeechSynthesisUtterance === 'undefined') return false;
+  try { ss.cancel(); const u = new SpeechSynthesisUtterance(text); if (SETUP.lang) { u.lang = SETUP.lang; const v = (ss.getVoices() || []).find(v => v.lang && v.lang.toLowerCase().startsWith(SETUP.lang.toLowerCase().slice(0, 2))); if (v) u.voice = v; } u.rate = .9; ss.speak(u); return true; } catch(e){ return false; }
+}
+const PH_FIELDS = [
+  { k:'local', l:'In the local language', req:true }, { k:'roman', l:'How to say it (optional)' },
+  { k:'en', l:'Meaning in English', req:true }, { k:'cat', l:'Category (optional)', ph:'Food, Getting around, Hotel…' },
+];
+function Phrasebook({ phrases, setPhrases, toast }){
+  const Vol = I('Volume2'), Plus = I('Plus'), Pencil = I('Pencil'), Eye = I('Eye');
+  const L = useListSheet(setPhrases, toast, 'Phrase');
+  const [big, setBig] = useState(null);
+  const list = phrases || [];
+  return html`<${Fold} id="phrases" icon="Volume2" title="Phrasebook" summary=${list.length ? list.length + ' phrases to play or show staff' + (SETUP.lang ? '' : ' · set a voice language in Trip setup') : 'Add phrases to play aloud or show full screen'}>
+    ${list.map(p => html`<div key=${p.id} class="flex items-start gap-3" style=${{ padding:'10px 0', borderBottom:'1px dashed var(--line)' }}>
+      <div style=${{ flex:1, minWidth:0 }}>
+        <div class="serif" style=${{ fontSize:19, fontWeight:700 }}>${p.local}</div>
+        ${p.roman && html`<div class="faint" style=${{ fontSize:12.5 }}>${p.roman}</div>`}
+        <div class="muted" style=${{ fontSize:13.5 }}>${p.en}${p.cat ? html`<span class="tag" style=${{ marginLeft:6 }}>${p.cat}</span>` : ''}</div>
+      </div>
+      <button class="btn" style=${{ padding:8, borderRadius:999 }} onClick=${() => { if (!speak(p.local)) toast('No voice available on this device'); }} aria-label=${'Play ' + p.en}><${Vol} size=${16} /></button>
+      <button class="btn" style=${{ padding:8, borderRadius:999 }} onClick=${() => setBig(p)} aria-label=${'Show ' + p.en + ' full screen'}><${Eye} size=${16} /></button>
+      <button class="faint" style=${{ background:'none', border:0, padding:6, cursor:'pointer' }} onClick=${() => L.setSheet({ item:p })} aria-label=${'Edit ' + p.en}><${Pencil} size=${14} /></button>
+    </div>`)}
+    <button class="btn w-full" style=${{ marginTop:12 }} onClick=${() => L.setSheet({ item:null })}><${Plus} size=${16} />Add a phrase</button>
+    <${AnimatePresence}>
+      ${L.sheet && html`<${ListEditor} key="ph" title=${L.sheet.item ? 'Edit phrase' : 'Add a phrase'} fields=${PH_FIELDS} item=${L.sheet.item} onSave=${L.save} onDelete=${L.del} onClose=${L.close} />`}
+      ${big && html`<${motion.div} key="full" onClick=${() => setBig(null)} initial=${{ opacity:0 }} animate=${{ opacity:1 }} exit=${{ opacity:0 }} style=${{ position:'fixed', inset:0, zIndex:60, background:'var(--paper)', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', padding:24, textAlign:'center' }} role="dialog" aria-label="Phrase for staff">
+        <div class="serif" style=${{ fontSize:'clamp(32px,10vw,72px)', fontWeight:700, lineHeight:1.3, overflowWrap:'anywhere' }}>${big.local}</div>
+        ${big.roman && html`<div class="muted" style=${{ marginTop:14, fontSize:15 }}>${big.roman}</div>`}
+        <div class="muted" style=${{ marginTop:6, fontSize:16 }}>${big.en}</div>
+        <div class="faint" style=${{ marginTop:32, fontSize:13 }}>Tap anywhere to close</div>
+      <//>`}
+    <//>
+  <//>`;
+}
+
+/* ---------- packing ---------- */
+const PACK = [
+  { g:'Documents & money', items:[['pd1','Passports (6+ months validity)'],['pd2','Visa or arrival forms, if needed'],['pd3','Flight details'],['pd4','Hotel confirmations'],['pd5','Travel insurance policy'],['pd6','Cards plus some local cash']] },
+  { g:'Tech', items:[['pt1','Phones and charging cables'],['pt2','Power banks — carry-on only'],['pt3','Plug adapter'],['pt4','eSIM or roaming set up'],['pt5','Earphones']] },
+  { g:'Clothes', items:[['pc1','Layers for the weather'],['pc2','Comfortable walking shoes'],['pc3','Sleepwear'],['pc4','Compact umbrella or rain jacket']] },
+  { g:'Health & handy', items:[['ph1','Personal medicine and prescriptions'],['ph2','Plasters and painkillers'],['ph3','Hand sanitiser and tissues'],['ph4','Foldable shopping bag'],['ph5','Small towel']] },
+];
+const PACK_N = PACK.reduce((n, g) => n + g.items.length, 0);
+function Packing({ pack, setPack }){
+  const Check = I('Check'), Plus = I('Plus'), Trash = I('Trash');
+  const [txt, setTxt] = useState('');
+  const checked = pack.checked || {}, custom = pack.custom || [];
+  const tick = (id) => setPack(p => ({ ...p, checked: { ...(p.checked || {}), [id]: !(p.checked || {})[id] } }));
+  const add = () => { const t = txt.trim(); if (!t) return; setPack(p => ({ ...p, custom: [...(p.custom || []), { id:'c' + Date.now().toString(36), t }] })); setTxt(''); };
+  const del = (id) => setPack(p => { const c = { ...(p.checked || {}) }; delete c[id]; return { checked:c, custom:(p.custom || []).filter(x => x.id !== id) }; });
+  const total = PACK_N + custom.length;
+  const n = PACK.reduce((k, g) => k + g.items.filter(([id]) => checked[id]).length, 0) + custom.filter(x => checked[x.id]).length;
+  const Item = ({ id, t, onDel }) => html`<li class=${'flex items-center gap-3' + (checked[id] ? ' done' : '')} style=${{ listStyle:'none', padding:'9px 0', borderBottom:'1px dashed var(--line)' }}>
+    <button class="check" role="checkbox" aria-checked=${!!checked[id]} aria-label=${'Packed: ' + t} onClick=${() => tick(id)}>${checked[id] && html`<${Check} size=${13} strokeWidth=${3} />`}</button>
+    <span class="act-title" style=${{ fontSize:14, flex:1, minWidth:0 }}>${t}</span>
+    ${onDel && html`<button onClick=${onDel} aria-label=${'Remove ' + t} style=${{ background:'none', border:0, padding:4, cursor:'pointer', color:'var(--ink3)', display:'inline-flex' }}><${Trash} size=${15} /></button>`}
+  </li>`;
+  return html`<${Fold} id="pack" icon="Backpack" title="Packing checklist" summary=${n + ' of ' + total + ' packed' + (n === total && total ? ' — all set!' : '')}>
+    <div style=${{ height:6, borderRadius:3, background:'var(--line)', overflow:'hidden' }}><div style=${{ width:(total ? n / total * 100 : 0) + '%', height:'100%', background:'var(--moss)', transition:'width .3s' }}></div></div>
+    ${PACK.map(g => html`<div key=${g.g} style=${{ marginTop:16 }}>
+      <div class="faint" style=${{ fontSize:12, fontWeight:700, letterSpacing:'.06em', textTransform:'uppercase' }}>${g.g} · ${g.items.filter(([id]) => checked[id]).length}/${g.items.length}</div>
+      <ul style=${{ margin:'2px 0 0', padding:0 }}>${g.items.map(([id, t]) => html`<${Item} key=${id} id=${id} t=${t} />`)}</ul>
+    </div>`)}
+    <div style=${{ marginTop:16 }}>
+      <div class="faint" style=${{ fontSize:12, fontWeight:700, letterSpacing:'.06em', textTransform:'uppercase' }}>Your own items</div>
+      <ul style=${{ margin:'2px 0 0', padding:0 }}>${custom.map(x => html`<${Item} key=${x.id} id=${x.id} t=${x.t} onDel=${() => del(x.id)} />`)}</ul>
+      <form class="flex gap-2" style=${{ marginTop:10 }} onSubmit=${e => { e.preventDefault(); add(); }}>
+        <input value=${txt} onInput=${e => setTxt(e.target.value)} placeholder="Add an item" aria-label="New packing item" style=${{ flex:1 }} />
+        <button class="btn primary" type="submit" style=${{ padding:'8px 12px' }} aria-label="Add item"><${Plus} size=${16} /></button>
+      </form>
+    </div>
+  <//>`;
+}
+
+/* ---------- money ---------- */
+const SPEND_CATS = [['food','Food'],['transport','Transport'],['shopping','Shopping'],['sights','Sights'],['stay','Stay'],['other','Other']];
+const SPEND_LABEL = Object.fromEntries(SPEND_CATS);
+const money = (n, cur) => (cur ? cur + ' ' : '') + (Math.abs(n) >= 1000 || Number.isInteger(n) ? Math.round(n).toLocaleString('en-US') : n.toLocaleString('en-US', { maximumFractionDigits:2 }));
+function Money({ spend, setSpend, toast, onSetup }){
+  const Plus = I('Plus'), Trash = I('Trash');
+  const LC = SETUP.localCur || 'Local', HC = SETUP.homeCur || 'Home';
+  const r = SETUP.rate > 0 ? SETUP.rate : 0;
+  const [lv, setLv] = useState('1000'); const [hv, setHv] = useState(r ? (1000 / r).toFixed(2) : '');
+  const onL = (v) => { setLv(v); const n = parseFloat(String(v).replace(/,/g, '')); setHv(r && isFinite(n) ? (n / r).toFixed(2) : ''); };
+  const onH = (v) => { setHv(v); const n = parseFloat(String(v).replace(/,/g, '')); setLv(r && isFinite(n) ? String(Math.round(n * r * 100) / 100) : ''); };
+  useEffect(() => { onL(lv); }, [r]);
+  const [amt, setAmt] = useState(''), [desc, setDesc] = useState(''), [cat, setCat] = useState('food'), [date, setDate] = useState(todayISO());
+  const add = () => { const n = parseFloat(String(amt).replace(/,/g, '')); if (!(n > 0)) { toast('Enter an amount'); return; } setSpend(l => [...(l || []), { id:'s' + Date.now().toString(36), date, desc: desc.trim() || SPEND_LABEL[cat], amt:n, cat }]); setAmt(''); setDesc(''); toast('Logged ' + money(n, LC)); };
+  const list = (spend || []).slice().sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id));
+  const total = list.reduce((t, x) => t + (x.amt || 0), 0);
+  const byCat = SPEND_CATS.map(([id, l]) => [id, l, list.filter(x => x.cat === id).reduce((t, x) => t + (x.amt || 0), 0)]).filter(x => x[2] > 0);
+  const byDay = list.reduce((m, x) => { (m[x.date] = m[x.date] || []).push(x); return m; }, {});
+  const lbl = { fontSize:12, fontWeight:700, letterSpacing:'.06em', textTransform:'uppercase' };
+  const home = (n) => r ? ' ≈ ' + money(n / r, HC) : '';
+  return html`<${Fold} id="money" icon="Coins" title="Currency & spending" summary=${list.length ? money(total, LC) + ' spent' + home(total) : r ? '1,000 ' + LC + home(1000) : 'Set currencies and a rate in Trip setup'}>
+    ${!r && html`<p class="muted" style=${{ fontSize:13.5, margin:'0 0 10px' }}>Add your home and local currency and the exchange rate in <button class="faint" style=${{ background:'none', border:0, padding:0, textDecoration:'underline', cursor:'pointer' }} onClick=${onSetup}>Trip setup</button> to turn on the converter.</p>`}
+    ${r > 0 && html`<div>
+      <div class="faint" style=${lbl}>Convert</div>
+      <div class="grid grid-cols-2 gap-2" style=${{ marginTop:8 }}>
+        <label><span class="faint" style=${{ fontSize:12.5 }}>${LC}</span><input inputMode="decimal" value=${lv} onInput=${e => onL(e.target.value)} style=${{ marginTop:4, fontSize:18, fontWeight:700 }} /></label>
+        <label><span class="faint" style=${{ fontSize:12.5 }}>${HC}</span><input inputMode="decimal" value=${hv} onInput=${e => onH(e.target.value)} style=${{ marginTop:4, fontSize:18, fontWeight:700 }} /></label>
+      </div>
+      <p class="faint" style=${{ fontSize:12, margin:'6px 0 0' }}>Rate: ${r} ${LC} per 1 ${HC}. Change it in Trip setup.</p>
+    </div>`}
+    <div class="faint" style=${{ ...lbl, marginTop:18 }}>Log spending (${LC})</div>
+    <form onSubmit=${e => { e.preventDefault(); add(); }} style=${{ marginTop:8 }}>
+      <div class="grid gap-2" style=${{ gridTemplateColumns:'1fr 1fr' }}>
+        <input inputMode="decimal" value=${amt} onInput=${e => setAmt(e.target.value)} placeholder=${'Amount in ' + LC} aria-label="Amount spent" />
+        <input type="date" value=${date} onInput=${e => setDate(e.target.value)} aria-label="Date" />
+      </div>
+      <input value=${desc} onInput=${e => setDesc(e.target.value)} placeholder="What for?" aria-label="Description" style=${{ marginTop:8 }} />
+      <div class="flex flex-wrap gap-2" style=${{ marginTop:8 }} role="group" aria-label="Category">${SPEND_CATS.map(([id, l]) => html`<button type="button" key=${id} class="chip" aria-pressed=${cat === id} onClick=${() => setCat(id)}>${l}</button>`)}</div>
+      <button class="btn primary w-full" type="submit" style=${{ marginTop:10 }}><${Plus} size=${16} />Add</button>
+    </form>
+    ${list.length > 0 && html`<div style=${{ marginTop:18 }}>
+      <div class="flex items-end justify-between"><div><div class="faint" style=${{ fontSize:12.5 }}>Total so far</div><div class="serif" style=${{ fontSize:26, fontWeight:700 }}>${money(total, LC)}</div></div><div class="muted" style=${{ fontSize:15, fontWeight:600 }}>${home(total)}</div></div>
+      ${byCat.map(([id, l, v]) => html`<div key=${id} style=${{ marginTop:6 }}>
+        <div class="flex justify-between" style=${{ fontSize:13 }}><span>${l}</span><span class="muted">${money(v, LC)}</span></div>
+        <div style=${{ height:5, borderRadius:3, background:'var(--line)', marginTop:3, overflow:'hidden' }}><div style=${{ width:(v / total * 100) + '%', height:'100%', background:'var(--sakura)' }}></div></div>
+      </div>`)}
+      ${Object.keys(byDay).sort().reverse().map(d => html`<div key=${d} style=${{ marginTop:16 }}>
+        <div class="flex justify-between faint" style=${{ fontSize:12.5, fontWeight:700 }}><span>${fmt(d)}</span><span>${money(byDay[d].reduce((t, x) => t + (x.amt || 0), 0), LC)}</span></div>
+        <ul style=${{ margin:'2px 0 0', padding:0 }}>${byDay[d].map(x => html`<li key=${x.id} class="flex items-center gap-2" style=${{ listStyle:'none', padding:'8px 0', borderBottom:'1px dashed var(--line)', fontSize:14 }}>
+          <span style=${{ flex:1, minWidth:0 }}>${x.desc}<span class="faint" style=${{ fontSize:12, marginLeft:6 }}>${SPEND_LABEL[x.cat] || ''}</span></span>
+          <span style=${{ fontWeight:600, whiteSpace:'nowrap' }}>${money(x.amt || 0, '')}</span>
+          <button onClick=${() => setSpend(l => (l || []).filter(y => y.id !== x.id))} aria-label=${'Delete ' + x.desc} style=${{ background:'none', border:0, padding:4, cursor:'pointer', color:'var(--ink3)', display:'inline-flex' }}><${Trash} size=${15} /></button>
+        </li>`)}</ul>
+      </div>`)}
+    </div>`}
+  <//>`;
+}
+
+/* ---------- emergency ---------- */
+const EM_FIELDS = [{ k:'label', l:'Who', req:true, ph:'e.g. Police' }, { k:'num', l:'Number', req:true, ph:'e.g. 112' }];
+function Emergency({ setup, setSetup, toast }){
+  const Phone = I('Phone'), Plus = I('Plus'), Pencil = I('Pencil');
+  const list = setup.emergency || [];
+  const setList = (fn) => setSetup(s => ({ ...s, emergency: fn(s.emergency || []) }));
+  const L = useListSheet(setList, toast, 'Number');
+  return html`<div class="surface" style=${{ padding:18, marginBottom:12 }}>
+    <div class="flex items-center gap-2" style=${{ fontWeight:700 }}><${Phone} size=${18} />If something goes wrong</div>
+    ${list.length === 0 && html`<p class="muted" style=${{ fontSize:13.5, margin:'6px 0 0' }}>Add local emergency numbers, your embassy and your insurer’s hotline.</p>`}
+    <dl class="kv" style=${{ margin:'8px 0 0' }}>${list.map(e => html`<div key=${e.id} class="flex justify-between items-center gap-2" style=${{ marginTop:8 }}>
+      <dt style=${{ marginTop:0 }}>${e.label}</dt>
+      <dd class="flex items-center gap-2"><a href=${'tel:' + e.num.replace(/[^\d+]/g, '')} style=${{ fontWeight:700 }}>${e.num}</a><button class="faint" style=${{ background:'none', border:0, padding:2, cursor:'pointer' }} onClick=${() => L.setSheet({ item:e })} aria-label=${'Edit ' + e.label}><${Pencil} size=${13} /></button></dd>
+    </div>`)}</dl>
+    <button class="btn w-full" style=${{ marginTop:12 }} onClick=${() => L.setSheet({ item:null })}><${Plus} size=${16} />Add a number</button>
+    <${AnimatePresence}>${L.sheet && html`<${ListEditor} key="em" title=${L.sheet.item ? 'Edit number' : 'Add a number'} fields=${EM_FIELDS} item=${L.sheet.item} onSave=${L.save} onDelete=${L.del} onClose=${L.close} />`}<//>
+  </div>`;
+}
+
+/* ---------- utilities ---------- */
+function Utilities({ setup, setSetup, onSetup, done, notes, bookings, hotels, toast, onReset, phrases, setPhrases, pack, setPack, spend, setSpend }){
+  const Sheet_ = I('FileSpreadsheet'), Dl = I('Download'), Cal = I('CalendarDays'), Reset = I('RotateCcw'), Plane = I('Plane'), Pencil = I('Pencil');
+  const rows = () => [['Day','Date','City','Area','Stay','Start','End','Plan','Details','Food note','Tags','Done','Day notes'],
+    ...ALL_ACTS.map(a => [a.day.n, a.date || a.day.date, a.day.city, a.day.area, a.day.stay, a.start, a.end, a.title, a.desc, a.note || '', (a.tags || []).filter(t => TAG_LABEL[t]).map(t => TAG_LABEL[t]).join('; '), done[a.id] ? 'Yes' : '', notes[a.day.n] || ''])];
+  const slug = (setup.name || 'trip').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'trip';
+  const exportCSV = async () => { const csv = '\uFEFF' + toCSV(rows()); const r = await saveFile(slug + '-itinerary.csv', csv, csv); toast(r === 'saved' ? 'Saved CSV' : r === 'copied' ? 'Download unavailable — CSV copied' : r === 'declined' ? 'Download cancelled' : 'Could not export'); };
+  const exportXLSX = async () => {
+    if (!window.XLSX) { toast('Excel library did not load — use CSV instead'); return; }
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows()), 'Itinerary');
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['Booking','Via','Ref','For date','Book by','Status','Notes'], ...(bookings || []).map(b => [b.title, b.via, b.ref, b.date, b.deadline, STATUS[effStatus(b).s], b.note])]), 'Bookings');
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['Hotel','City','Check-in','Check-out','Address','Phone','Ref','Notes'], ...(hotels || []).map(h => [h.name, h.city, h.checkIn, h.checkOut, h.address, h.phone, h.ref, h.note])]), 'Hotels');
+    if (spend && spend.length) XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['Date','What','Category','Amount (' + (setup.localCur || 'local') + ')'], ...spend.map(x => [x.date, x.desc, SPEND_LABEL[x.cat] || x.cat, x.amt])]), 'Spending');
+    const buf = XLSX.write(wb, { bookType:'xlsx', type:'array' });
+    const r = await saveFile(slug + '.xlsx', new Blob([buf]), null);
+    toast(r === 'saved' ? 'Saved Excel file' : r === 'declined' ? 'Download cancelled' : 'Download unavailable here — try CSV');
+  };
+  const exportGCal = async () => {
+    const usDate = (s) => { const [y,m,d] = s.split('-'); return `${m}/${d}/${y}`; };
+    const ampm = (t) => { let [h,m] = t.split(':').map(Number); const p = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return `${h}:${String(m).padStart(2,'0')} ${p}`; };
+    const csv = toCSV([['Subject','Start Date','Start Time','End Date','End Time','All Day Event','Description','Location','Private'], ...ALL_ACTS.map(a => [a.title, usDate(a.date || a.day.date), ampm(a.start), usDate(a.date || a.day.date), ampm(a.end), 'False', a.desc + (a.note ? '\n' + a.note : ''), placeQueries(a, a.day)[0] || [a.day.area, a.day.city, setup.dest].filter(Boolean).join(', '), 'True'])]);
+    const r = await saveFile(slug + '-google-calendar.csv', csv, csv);
+    toast(r === 'saved' ? 'Saved — import it at calendar.google.com' : r === 'copied' ? 'Download unavailable — CSV copied' : r === 'declined' ? 'Download cancelled' : 'Could not export');
+  };
+  const Card = ({ icon, title, body, children }) => html`<div class="surface" style=${{ padding:18, marginBottom:12 }}>
+    <div class="flex items-center gap-2" style=${{ fontWeight:700 }}><${icon} size=${18} />${title}</div>
+    ${body && html`<p class="muted" style=${{ fontSize:13.5, margin:'6px 0 0' }}>${body}</p>`}
+    <div style=${{ marginTop:14 }}>${children}</div></div>`;
+  return html`<section aria-labelledby="ut-h">
+    <h2 id="ut-h" class="serif flex items-center gap-3" style=${{ fontSize:22, fontWeight:700, margin:'28px 0 14px' }}><${SectionIcon} name="Wrench" />Utilities</h2>
+    <${Card} icon=${Plane} title="Trip setup" body=${setup.name ? [setup.name, setup.dest, hasDates() ? fmt(setup.start) + ' · ' + setup.nDays + ' days' : '', setup.cities.join(' → ')].filter(Boolean).join(' · ') : 'Name, dates, cities, currencies and phrasebook language.'}>
+      <button class="btn w-full" onClick=${onSetup}><${Pencil} size=${15} />${setup.name ? 'Edit trip setup' : 'Set up the trip'}</button>
+    <//>
+    <${SyncCard} />
+    <${Phrasebook} phrases=${phrases} setPhrases=${setPhrases} toast=${toast} />
+    <${Money} spend=${spend} setSpend=${setSpend} toast=${toast} onSetup=${onSetup} />
+    <${Packing} pack=${pack} setPack=${setPack} />
+    <${Card} icon=${Sheet_} title="Export" body="Itinerary, bookings, hotels and spending.">
+      <div class="grid grid-cols-2 gap-2">
+        <button class="btn primary" onClick=${exportXLSX}><${Dl} size=${16} />Excel (.xlsx)</button>
+        <button class="btn" onClick=${exportCSV}><${Dl} size=${16} />CSV</button>
+      </div>
+      <button class="btn w-full" style=${{ marginTop:8 }} onClick=${exportGCal}><${Cal} size=${16} />Google Calendar file</button>
+    <//>
+    <${Emergency} setup=${setup} setSetup=${setSetup} toast=${toast} />
+    <${Card} icon=${Reset} title="Clear progress" body="Clears check-offs, day notes, packing ticks and spending. Plans, bookings and hotels stay. If sync is on, this also clears them for your partner.">
+      <button class="btn w-full" style=${{ color:'var(--momiji)' }} onClick=${() => { if (confirm('Clear check-offs, notes, packing ticks and spending?')) onReset(); }}><${Reset} size=${16} />Clear progress</button>
+    <//>
+  </section>`;
+}
+
+/* ---------- this trip's plan, built in so the page works without sync ---------- */
+const SEED = {"setup": {"name": "Tasmania · Phillip Island · Melbourne", "dest": "Australia", "start": "2027-10-21", "nDays": 13, "cities": ["Hobart", "Freycinet", "Launceston", "Phillip Island", "Melbourne"], "homeCity": "Singapore", "homeCur": "SGD", "localCur": "AUD", "rate": 1.11, "lang": "en-AU", "tz": "Australia/Melbourne", "emergency": [{"id": "e1", "label": "Police, fire, ambulance", "num": "000"}, {"id": "e2", "label": "Emergency from any mobile", "num": "112"}, {"id": "e3", "label": "Police (non-urgent)", "num": "131 444"}, {"id": "e4", "label": "Healthdirect nurse line (24h)", "num": "1800 022 222"}, {"id": "e5", "label": "Poisons Information Centre", "num": "13 11 26"}, {"id": "e6", "label": "Singapore High Commission, Canberra", "num": "+61 2 6271 2000"}]}, "itinerary": [{"n": 0, "date": "2027-10-21", "city": "", "area": "Singapore → Melbourne", "title": "Night flight to Melbourne", "stay": "On the plane", "food": [], "acts": [{"id": "t01", "title": "Night flight SIN → MEL — not booked yet", "desc": "Overnight, about 7h 40m; lands early on 22 Oct (Australia is 3 h ahead). The 1-year-old flies on a parent’s lap (infant fare) — request a bassinet seat (check the airline’s weight and length limits); the 5-year-old has their own seat. Pyjamas on at boarding, gate-check the stroller. ETA approved for all 6.", "start": "21:00", "end": "23:59", "label": "Flight TBC", "note": null, "tags": ["book"], "place": "Changi Airport"}]}, {"n": 1, "date": "2027-10-22", "city": "Hobart", "area": "Melbourne → Hobart", "title": "Hobart 1/3 — arrive and rest", "stay": "Hobart family apartment (3 nights)", "food": ["Constitution Dock fish punts"], "acts": [{"id": "t02", "title": "Flight MEL → HBA — not booked yet", "desc": "Allow 1h 30m+ in Melbourne to clear immigration and re-check bags. A mid-morning flight is kinder after the red-eye.", "start": "08:30", "end": "09:45", "label": "Flight TBC", "note": null, "tags": ["book"], "place": "Hobart Airport"}, {"id": "t03", "title": "Pick up 8-seater + child seats", "desc": "Hobart Airport, one-way to Launceston: a rear-facing baby seat for the 1-year-old + a booster seat for the 5-year-old. Allow 15 min to fit them.", "start": "10:00", "end": "10:45", "label": null, "note": null, "tags": [], "place": "Hobart Airport"}, {"id": "t04", "title": "Check in, lunch, long nap", "desc": "About 20 min to the city. Ask for early check-in — everyone needs sleep after the night flight.", "start": "11:30", "end": "15:30", "label": null, "note": null, "tags": []}, {"id": "t05", "title": "Battery Point & Princes Park", "desc": "Gentle stroll past old cottages, then the playground.", "start": "16:00", "end": "17:15", "label": null, "note": null, "tags": ["photo"], "place": "Arthur Circus Battery Point, Princes Park Hobart"}, {"id": "t06", "title": "Waterfront early dinner", "desc": "Fish and chips on Constitution Dock.", "start": "17:30", "end": "19:00", "label": "Dinner", "note": null, "tags": ["food"], "place": "Constitution Dock Hobart"}]}, {"n": 2, "date": "2027-10-23", "city": "Hobart", "area": "Salamanca & kunanyi", "title": "Hobart 2/3 — Salamanca Market and the mountain", "stay": "Hobart family apartment (3 nights)", "food": ["Salamanca Market", "Jackman & McRoss"], "acts": [{"id": "t07", "title": "Salamanca Market", "desc": "Saturdays from 8.30am — produce, crafts, scallop pies. A carrier for the toddler beats a stroller in the crowd; hold the 5-year-old’s hand.", "start": "08:30", "end": "11:00", "label": null, "note": null, "tags": ["must", "food", "shop"], "place": "Salamanca Market"}, {"id": "t08", "title": "St David’s Park + early lunch", "desc": "Grassy park next to the market for the kids to run.", "start": "11:00", "end": "12:00", "label": "Lunch", "note": null, "tags": ["food"], "place": "St Davids Park Hobart"}, {"id": "t09", "title": "Toddler nap · free time", "desc": "The toddler naps at the apartment with a parent. The 5-year-old can have quiet time or tag along with the couple. Couple’s option: browse the rest of Salamanca Market and Battery Point, or a coffee on the waterfront.", "start": "12:30", "end": "14:30", "label": "Nap", "note": null, "tags": []}, {"id": "t10", "title": "kunanyi / Mt Wellington", "desc": "~30 min drive up; only if the summit is clear. Very cold — full winter layers; stay near the summit boardwalk.", "start": "15:00", "end": "16:30", "label": null, "note": null, "tags": ["must", "photo"], "place": "kunanyi Mount Wellington Pinnacle"}, {"id": "t11", "title": "Dinner", "desc": "", "start": "17:30", "end": "19:00", "label": "Dinner", "note": null, "tags": ["food"], "place": "Salamanca Place"}]}, {"n": 3, "date": "2027-10-24", "city": "Hobart", "area": "Bonorong & Richmond", "title": "Hobart 3/3 — kangaroos and Richmond", "stay": "Hobart family apartment (3 nights)", "food": ["Richmond bakery"], "acts": [{"id": "t12", "title": "Bonorong Wildlife Sanctuary", "desc": "30 min north of Hobart. Hand-feed kangaroos, see wombats and devils; keeper talks included. Open 9–5. (Swap: Mt Field’s pram-friendly Russell Falls walk, 1h 15m away.)", "start": "09:30", "end": "12:00", "label": null, "note": null, "tags": ["must"], "place": "Bonorong Wildlife Sanctuary"}, {"id": "t13", "title": "Richmond lunch & bridge", "desc": "Bakery lunch, duck-feeding under Australia’s oldest bridge, Old Hobart Town model village.", "start": "12:15", "end": "13:30", "label": "Lunch", "note": null, "tags": ["food", "photo"], "place": "Richmond Bridge Tasmania, Old Hobart Town Model Village"}, {"id": "t14", "title": "Drive back (nap)", "desc": "About 25 min — keep napping at the apartment.", "start": "13:30", "end": "14:00", "label": null, "note": null, "tags": []}, {"id": "t15", "title": "Toddler nap · free time", "desc": "The toddler naps at the apartment with a parent. The 5-year-old can have quiet time or tag along with the couple. Couple’s option: Cascade Brewery tour or the Female Factory heritage site, both about 10 min from the city.", "start": "14:00", "end": "16:00", "label": "Nap", "note": null, "tags": []}, {"id": "t16", "title": "Couple’s option: Hobart Rivulet platypus walk", "desc": "For the couple while the family has an early dinner: a guided walk to spot wild platypus in the middle of Hobart with naturalist Pete Walsh (2 h, max 8 guests, very high sighting rate, free second-chance walk if none show). Dirt paths, best around dusk. The kids see platypuses up close at Platypus House on 27 Oct.", "start": "16:30", "end": "18:30", "label": "Optional", "note": null, "tags": ["book"], "place": "Hobart Rivulet Park"}, {"id": "t17", "title": "Early family dinner, pack", "desc": "Moving to Freycinet tomorrow.", "start": "17:00", "end": "18:30", "label": "Dinner", "note": null, "tags": ["food"], "place": "Hobart"}]}, {"n": 4, "date": "2027-10-25", "city": "Freycinet", "area": "Hobart → east coast → Coles Bay", "title": "Freycinet 1/2 — down the east coast", "stay": "Coles Bay family cabin (2 nights)", "food": ["Kate’s Berry Farm"], "acts": [{"id": "t18", "title": "Check out, drive to Swansea", "desc": "About 2 h up the east coast — the kids may nap.", "start": "09:00", "end": "11:00", "label": null, "note": null, "tags": [], "place": "Swansea Tasmania"}, {"id": "t19", "title": "Kate’s Berry Farm + Spiky Bridge", "desc": "Early lunch with berry ice cream and a sea view; Spiky Bridge is 5 min on.", "start": "11:00", "end": "12:15", "label": "Lunch", "note": null, "tags": ["food", "photo"], "place": "Kates Berry Farm, Spiky Bridge"}, {"id": "t20", "title": "Drive to Coles Bay", "desc": "About 45 min.", "start": "12:15", "end": "13:00", "label": null, "note": null, "tags": [], "place": "Coles Bay Tasmania"}, {"id": "t21", "title": "Check in + nap", "desc": "", "start": "13:00", "end": "15:30", "label": null, "note": null, "tags": []}, {"id": "t22", "title": "Honeymoon Bay", "desc": "Short, easy walk to a calm little beach — good for rock-hopping kids. Parks pass needed.", "start": "16:00", "end": "17:30", "label": null, "note": null, "tags": ["photo"], "place": "Honeymoon Bay Freycinet"}]}, {"n": 5, "date": "2027-10-26", "city": "Freycinet", "area": "Freycinet & Bicheno", "title": "Freycinet 2/2 — Wineglass Bay and Bicheno", "stay": "Coles Bay family cabin (2 nights)", "food": ["Freycinet Marine Farm"], "acts": [{"id": "t23", "title": "Wineglass Bay lookout", "desc": "About 1–1.5 h return on a rocky uphill track. The 5-year-old can usually walk it with breaks; the toddler goes in the carrier. The couple can carry on down to Wineglass Bay beach (adds about 1.5 h) and meet the others at the Marine Farm.", "start": "08:00", "end": "09:30", "label": null, "note": null, "tags": ["must", "photo"], "place": "Wineglass Bay Lookout"}, {"id": "t24", "title": "Freycinet Marine Farm", "desc": "Oysters for the adults, fish and chips for the kids.", "start": "10:30", "end": "11:30", "label": "Lunch", "note": null, "tags": ["food"], "place": "Freycinet Marine Farm"}, {"id": "t25", "title": "Toddler nap · free time", "desc": "The toddler naps at the cabin with a parent. The 5-year-old can have quiet time or tag along with the couple. Couple’s option: walk the Cape Tourville lighthouse boardwalk (20 min), or a cellar door on the Great Eastern Drive.", "start": "12:00", "end": "14:00", "label": "Nap", "note": null, "tags": []}, {"id": "t26", "title": "East Coast Natureworld, Bicheno", "desc": "About 35 min away. Hand-feed free-roaming kangaroos, daily devil feeding, playground; pram-friendly paths.", "start": "14:15", "end": "16:15", "label": null, "note": null, "tags": ["must"], "place": "East Coast Natureworld"}, {"id": "t27", "title": "Bicheno blowhole", "desc": "Short walk from the town foreshore; hold hands near the rocks.", "start": "16:15", "end": "17:00", "label": null, "note": null, "tags": ["photo"], "place": "Bicheno Blowhole"}]}, {"n": 6, "date": "2027-10-27", "city": "Launceston", "area": "Coles Bay → Beauty Point → Launceston", "title": "Launceston — platypus, then the gorge", "stay": "Launceston family hotel (1 night)", "food": ["Beauty Point lunch", "Cataract Gorge First Basin café"], "acts": [{"id": "t28", "title": "Check out, drive to Beauty Point", "desc": "About 2h 50m via Campbell Town (toilet and snack stop) and Launceston, then up the Tamar River. Longest drive of the trip — car toys and snacks ready.", "start": "08:15", "end": "11:15", "label": null, "note": null, "tags": [], "place": "Campbell Town Tasmania, Beauty Point Tasmania"}, {"id": "t29", "title": "Platypus House", "desc": "Guided tour: platypuses swimming up close and echidnas wandering around your feet. Open 10am–3.30pm (last tour 3pm). A highlight for the 5-year-old.", "start": "11:15", "end": "12:15", "label": null, "note": null, "tags": ["must", "book"], "place": "Platypus House Beauty Point"}, {"id": "t30", "title": "Lunch on the wharf", "desc": "Cafés by the river at Beauty Point.", "start": "12:15", "end": "13:00", "label": "Lunch", "note": null, "tags": ["food"], "place": "Beauty Point Tasmania"}, {"id": "t31", "title": "Seahorse World (optional)", "desc": "Next door: seahorses, touch pool. Skip if the toddler is fading.", "start": "13:00", "end": "13:45", "label": null, "note": null, "tags": [], "place": "Seahorse World Beauty Point"}, {"id": "t32", "title": "Drive to Launceston (toddler naps)", "desc": "About 50 min down the West Tamar Highway.", "start": "13:45", "end": "14:35", "label": null, "note": null, "tags": [], "place": "Launceston Tasmania"}, {"id": "t33", "title": "Check in + rest", "desc": "", "start": "14:45", "end": "15:45", "label": null, "note": null, "tags": []}, {"id": "t34", "title": "Cataract Gorge First Basin", "desc": "Flat paths, playground, peacocks and the chairlift — 5 min from the city. Early dinner after; pack for the morning flight.", "start": "16:00", "end": "17:30", "label": null, "note": null, "tags": ["must", "photo"], "place": "Cataract Gorge First Basin"}]}, {"n": 7, "date": "2027-10-28", "city": "Phillip Island", "area": "Launceston → Melbourne → Brighton → Phillip Island", "title": "Phillip Island 1/2 — morning flight, Brighton, BBQ night", "stay": "Phillip Island holiday house (2 nights)", "food": ["Brighton lunch", "San Remo Fisherman’s Co-op"], "acts": [{"id": "t35", "title": "Breakfast, check out", "desc": "Pack the night before so the morning is calm.", "start": "07:30", "end": "08:30", "label": null, "note": null, "tags": []}, {"id": "t36", "title": "Drive to Launceston Airport, return the car", "desc": "About 15 min south of the city. Refuel first; return the car and both child seats.", "start": "08:30", "end": "09:00", "label": null, "note": null, "tags": [], "place": "Launceston Airport"}, {"id": "t37", "title": "Flight LST → MEL — not booked yet", "desc": "Aim for a 9:30–10:30am departure (~1h 10m). Earlier than that means a rushed start with the kids.", "start": "10:00", "end": "11:15", "label": "Flight TBC", "note": null, "tags": ["book"], "place": "Launceston Airport"}, {"id": "t38", "title": "Pick up 8-seater + child seats", "desc": "Melbourne Airport: a rear-facing baby seat for the 1-year-old + a booster for the 5-year-old. Allow 15 min to fit them.", "start": "11:30", "end": "12:15", "label": null, "note": null, "tags": [], "place": "Melbourne Airport"}, {"id": "t39", "title": "Drive to Brighton", "desc": "About 40 min via CityLink (toll billed to the rental).", "start": "12:15", "end": "13:00", "label": null, "note": null, "tags": [], "place": "Brighton Victoria"}, {"id": "t40", "title": "Brighton bathing boxes + lunch", "desc": "Colourful beach huts on Dendy Street Beach; sand for the kids. Lunch at a Church St or Bay St café.", "start": "13:00", "end": "14:00", "label": "Lunch", "note": null, "tags": ["must", "photo", "food"], "place": "Brighton Bathing Boxes"}, {"id": "t41", "title": "Drive to Phillip Island (toddler naps)", "desc": "About 1h 45m, well ahead of the evening rush.", "start": "14:00", "end": "15:45", "label": null, "note": null, "tags": [], "place": "San Remo Victoria"}, {"id": "t42", "title": "Phillip Island Chocolate Factory", "desc": "In Newhaven, just over the bridge — a treat after the drive.", "start": "15:45", "end": "16:30", "label": null, "note": null, "tags": ["food"], "place": "Phillip Island Chocolate Factory"}, {"id": "t43", "title": "BBQ shopping, check in", "desc": "Woolworths/Coles in Cowes: sausages, lamb chops, chicken, corn, bread, salad, fruit. San Remo Co-op for prawns and fish.", "start": "16:30", "end": "17:15", "label": null, "note": null, "tags": ["shop"], "place": "Woolworths Cowes"}, {"id": "t44", "title": "BBQ night at the house", "desc": "Relaxed early BBQ — kids fed by 6pm and in bed on time before penguin night.", "start": "17:45", "end": "20:00", "label": "Evening", "note": null, "tags": ["must", "food"]}]}, {"n": 8, "date": "2027-10-29", "city": "Phillip Island", "area": "Phillip Island", "title": "Phillip Island 2/2 — koalas, farm, penguins", "stay": "Phillip Island holiday house (2 nights)", "food": ["Cowes cafés"], "acts": [{"id": "t45", "title": "Koala Conservation Reserve", "desc": "Boardwalks at koala height — pram-friendly.", "start": "09:30", "end": "10:45", "label": null, "note": null, "tags": ["must"], "place": "Koala Conservation Reserve"}, {"id": "t46", "title": "Churchill Island Heritage Farm", "desc": "Farm animals, cow milking and sheep demos.", "start": "11:00", "end": "12:30", "label": null, "note": null, "tags": ["must"], "place": "Churchill Island Heritage Farm"}, {"id": "t47", "title": "Lunch in Cowes", "desc": "Esplanade cafés by the jetty and beach.", "start": "12:45", "end": "13:30", "label": "Lunch", "note": null, "tags": ["food"], "place": "Cowes Esplanade"}, {"id": "t48", "title": "Toddler nap · free time", "desc": "The toddler naps at the house — a long one before the late night with a parent. The 5-year-old can have quiet time or tag along with the couple. Couple’s option: Cape Woolamai walk (pink granite cliffs, 1–2 h) or the Phillip Island Grand Prix Circuit visitor centre.", "start": "13:45", "end": "16:00", "label": "Nap", "note": null, "tags": []}, {"id": "t49", "title": "Early dinner", "desc": "Pack snacks, blankets and pyjamas for the parade.", "start": "17:00", "end": "18:00", "label": "Dinner", "note": null, "tags": ["food"]}, {"id": "t50", "title": "Penguin Parade", "desc": "Penguins come ashore after sunset — arrive about 1 h before. Underground Viewing is sheltered and warmer; General Viewing is outdoor stands. Premium is 12+ only. The 5-year-old needs a child ticket; the 1-year-old is likely free (check). Cashless.", "start": "18:45", "end": "21:00", "label": null, "note": null, "tags": ["must", "book"], "place": "Penguin Parade Phillip Island"}]}, {"n": 9, "date": "2027-10-30", "city": "Melbourne", "area": "Phillip Island → St Kilda → CBD", "title": "Melbourne 1/3 — beach morning, St Kilda", "stay": "Melbourne family apartment (2 nights)", "food": ["Acland Street cake shops"], "acts": [{"id": "t51", "title": "Cape Woolamai beach", "desc": "Slow start after penguin night: sand, rock pools and pink granite. Check out on the way.", "start": "09:00", "end": "10:30", "label": null, "note": null, "tags": ["photo"], "place": "Cape Woolamai Beach"}, {"id": "t52", "title": "Drive to St Kilda (toddler naps)", "desc": "About 1h 45m.", "start": "10:30", "end": "12:15", "label": null, "note": null, "tags": [], "place": "St Kilda Victoria"}, {"id": "t53", "title": "St Kilda beach afternoon", "desc": "Lunch, sandcastles, Catani Gardens playground, Acland St cakes, Luna Park photo.", "start": "12:15", "end": "16:00", "label": null, "note": null, "tags": ["food", "must"], "place": "St Kilda Beach, Catani Gardens, Acland Street St Kilda"}, {"id": "t54", "title": "Check in, park the car", "desc": "Keep the 8-seater for the rest of the trip. Use the apartment car park (check height clearance and the nightly fee). Today is Derby Day (Melbourne Cup carnival) — avoid driving near Flemington; expect traffic tonight.", "start": "16:30", "end": "17:30", "label": null, "note": null, "tags": [], "place": "Melbourne CBD"}]}, {"n": 10, "date": "2027-10-31", "city": "Melbourne", "area": "CBD & South Melbourne", "title": "Melbourne 2/3 — markets and shopping", "stay": "Melbourne family apartment (2 nights)", "food": ["Queen Victoria Market", "Lune Croissanterie", "Chinatown dumplings"], "acts": [{"id": "t55", "title": "Queen Victoria Market", "desc": "Sunday 9am–4pm (closed Mondays, so do it today). Leave the car parked — walk or take the free CBD tram with the stroller. Doughnuts, deli hall, souvenirs.", "start": "09:00", "end": "11:00", "label": null, "note": null, "tags": ["must", "food", "shop"], "place": "Queen Victoria Market"}, {"id": "t56", "title": "CBD shopping (tag-team)", "desc": "Emporium, Bourke St Mall, Block & Royal Arcades. The couple shops while the family of 4 takes the kids to Flagstaff Gardens playground — then swap so the parents get a turn.", "start": "11:15", "end": "13:00", "label": null, "note": null, "tags": ["shop"], "place": "Emporium Melbourne, Bourke Street Mall, Block Arcade"}, {"id": "t57", "title": "Toddler nap · free time", "desc": "The toddler naps at the apartment with a parent. The 5-year-old can have quiet time or tag along with the couple. Couple’s option: keep shopping in the CBD — the arcades and Melbourne Central are a short walk.", "start": "13:30", "end": "15:30", "label": "Nap", "note": null, "tags": []}, {"id": "t58", "title": "South Melbourne Market or Middle Park beach", "desc": "Drive (~10 min) — the market has its own car park. Open Sundays (dim sims, fruit, toys); the calm bay beach is 10 min further.", "start": "15:45", "end": "17:30", "label": null, "note": null, "tags": ["food", "shop"], "place": "South Melbourne Market, Middle Park Beach"}, {"id": "t59", "title": "Southbank dinner", "desc": "Early riverside dinner.", "start": "18:00", "end": "19:30", "label": "Dinner", "note": null, "tags": ["food"], "place": "Southbank Promenade"}]}, {"n": 11, "date": "2027-11-01", "city": "Melbourne", "area": "CBD → airport", "title": "Melbourne 3/3 — last shop, night flight home", "stay": "Late checkout (or keep the room)", "food": [], "acts": [{"id": "t60", "title": "DFO South Wharf outlet", "desc": "Drive over (~5 min) and use the DFO car park. Indoor, stroller-friendly, family rooms. Open Mondays.", "start": "09:30", "end": "12:00", "label": null, "note": null, "tags": ["shop"], "place": "DFO South Wharf"}, {"id": "t61", "title": "Lunch + nap", "desc": "Late checkout or keep the apartment a 3rd night so the kids nap and shower before the flight.", "start": "12:00", "end": "14:30", "label": null, "note": null, "tags": ["food"]}, {"id": "t62", "title": "Fitzroy Gardens & playground", "desc": "Easy last afternoon in the park.", "start": "15:00", "end": "17:30", "label": null, "note": null, "tags": [], "place": "Fitzroy Gardens Melbourne"}, {"id": "t63", "title": "Early dinner, collect bags", "desc": "Eat before leaving the city; load the car.", "start": "17:00", "end": "18:00", "label": "Dinner", "note": null, "tags": ["food"], "place": "Melbourne CBD"}, {"id": "t64", "title": "Drive to Melbourne Airport, return the car", "desc": "About 30 min on CityLink (toll billed to the rental). Refuel near the airport, follow the Rental Car Return signs, unpack the car seats last. Allow extra time — the night before Cup Day can be busy.", "start": "18:00", "end": "19:00", "label": null, "note": null, "tags": ["book"], "place": "Melbourne Airport"}, {"id": "t65", "title": "Night flight MEL → SIN — not booked yet", "desc": "Overnight home; pyjamas on before boarding.", "start": "21:00", "end": "23:59", "label": "Flight TBC", "note": null, "tags": ["book"], "place": "Melbourne Airport"}]}, {"n": 12, "date": "2027-11-02", "city": "", "area": "Singapore", "title": "Home", "stay": "", "food": [], "acts": [{"id": "t66", "title": "Land in Singapore", "desc": "Early-morning arrival.", "start": "05:00", "end": "06:00", "label": null, "note": null, "tags": [], "place": "Changi Airport"}]}], "bookings": [{"id": "b01", "title": "Australia ETA ×6 (2 couples + 2 kids)", "via": "Australian ETA app", "ref": "", "date": "2027-10-21", "status": "action", "note": "Every traveller needs one, children included. A$20 each in the official ETA app; valid 12 months.", "deadline": "2027-10-07"}, {"id": "b02", "title": "Flights SIN → MEL (night of 21 Oct) + MEL → HBA (22 Oct)", "via": "Not booked", "ref": "", "date": "2027-10-21", "status": "action", "note": "Overnight SIN → MEL, then a mid-morning MEL → HBA. Each family can book its own ticket — book the same flights together and link the bookings so you sit near each other. The 5-year-old needs a seat (child fare); the 1-year-old flies on a lap (infant fare) — check they’re still under 2 on 1 Nov. Request a bassinet seat; one ticket per family so bags go through.", "deadline": "2027-07-31"}, {"id": "b03", "title": "Flight LST → MEL, 28 Oct (morning)", "via": "Not booked", "ref": "", "date": "2027-10-28", "status": "pending", "note": "Aim for a 9:30–10:30am departure so you reach Phillip Island by mid-afternoon, before Melbourne’s evening rush. Check stroller and child-seat allowance on budget fares.", "deadline": "2027-07-31"}, {"id": "b04", "title": "Night flight MEL → SIN, 1 Nov", "via": "Not booked", "ref": "", "date": "2027-11-01", "status": "action", "note": "Night before Melbourne Cup Day — book early.", "deadline": "2027-07-31"}, {"id": "b05", "title": "Tasmania 8-seater + child seats: Hobart Airport → Launceston Airport", "via": "Rental company", "ref": "", "date": "2027-10-22", "status": "pending", "note": "People mover (Kia Carnival size) — 6 people plus luggage won’t fit a 7-seat SUV. Add a driver from each family (extra-driver fee). Option: two cars instead (a car for the couple, an SUV with the 2 seats for the family of 4) so you can split up during naps. Pre-book a rear-facing baby seat for the 1-year-old + a booster seat for the 5-year-old (Australian law: under-4s in a harnessed seat — rear-facing is safest at age 1 — and ages 4–7 in a forward-facing harness seat or booster). Pick up HBA airport 22 Oct, drop LST airport 28 Oct; one-way fee. Rental cars generally can’t go on the Spirit of Tasmania ferry, so this is a separate rental from Victoria.", "deadline": "2027-08-31"}, {"id": "b06", "title": "Victoria 8-seater + child seats: Melbourne Airport → Melbourne Airport", "via": "Rental company", "ref": "", "date": "2027-10-28", "status": "pending", "note": "Pick up 28 Oct afternoon, return 1 Nov evening before the night flight — same location, no one-way fee. Keeps the car seats with you for the whole Victoria leg. Ask about toll charges (CityLink) and the admin fee.", "deadline": "2027-08-31"}, {"id": "b07", "title": "Tasmania parks pass (Holiday Pass, per vehicle)", "via": "Parks & Wildlife Tasmania", "ref": "", "date": "2027-10-25", "status": "pending", "note": "Needed for Freycinet (and Mt Field if you swap it in). One pass per vehicle."}, {"id": "b08", "title": "Bonorong Wildlife Sanctuary", "via": "bonorong.com.au", "ref": "", "date": "2027-10-24", "status": "pending", "note": "Open 9–5. Check toddler pricing."}, {"id": "b09", "title": "East Coast Natureworld, Bicheno", "via": "natureworld.com.au", "ref": "", "date": "2027-10-26", "status": "pending", "note": "About A$32 adult. Check hours and devil-feeding times (0401 246 777)."}, {"id": "b10", "title": "Phillip Island 3 Parks Pass", "via": "penguins.org.au", "ref": "", "date": "2027-10-29", "status": "pending", "note": "Penguin Parade + Koala Reserve + Churchill Island. Consider Underground Viewing (sheltered). Child tickets are 4–15, so the 5-year-old pays the child price; check if the 1-year-old is free (child tickets start at 4). Bookings essential."}, {"id": "b11", "title": "eSIM or roaming for Australia", "via": "Telco / eSIM app", "ref": "", "date": "2027-10-22", "status": "pending", "note": "Coverage is patchy on parts of the east coast — download offline maps."}, {"id": "b12", "title": "Travel insurance — one policy per family", "via": "Insurer", "ref": "", "date": "2027-10-21", "status": "pending", "note": "Couple and family of 4 each take a policy. Name all drivers on the rental cover, and include kids’ medical.", "deadline": "2027-09-30"}, {"id": "b13", "title": "Platypus House (+ Seahorse World)", "via": "platypushouse.com.au", "ref": "", "date": "2027-10-27", "status": "pending", "note": "Beauty Point, open 7 days 10am–3.30pm, last tour 3pm. Arrive by about 11:15 on 27 Oct. Check child and toddler pricing."}, {"id": "b15", "title": "Hobart Rivulet platypus walk — couple, optional (24 Oct)", "via": "hobartrivuletplatypus.org", "ref": "", "date": "2027-10-24", "status": "pending", "note": "Guided by Pete Walsh, 2 h, max 8 guests. Ask for a late-afternoon or dusk time."}, {"id": "b14", "title": "Melbourne late checkout or 3rd night (1 Nov)", "via": "Hotel", "ref": "", "date": "2027-11-01", "status": "pending", "note": "For naps and showers before the night flight. Melbourne Cup week — book the apartment early.", "deadline": "2027-06-30"}], "hotels": [{"id": "h1", "name": "Hobart apartment, 2+ bedrooms (to book)", "city": "Hobart", "checkIn": "2027-10-22", "checkOut": "2027-10-25", "address": "", "phone": "", "ref": "", "note": "3 nights. Room plan: 1 bedroom for the couple, 1 for the family of 4 with a cot and a bed for the 5-year-old (or two adjoining units). Kitchen and laundry. Arriving late morning after the red-eye — ask for early check-in. Salamanca/Battery Point is walkable to the Saturday market. Parking for an 8-seater."}, {"id": "h2", "name": "Coles Bay house or 2 cabins (to book)", "city": "Freycinet", "checkIn": "2027-10-25", "checkOut": "2027-10-27", "address": "", "phone": "", "ref": "", "note": "2 nights. A 2–3 bedroom house, or two cabins side by side (one per family). A cot for the toddler. Coles Bay is closest to Wineglass Bay; Bicheno is 35 min."}, {"id": "h3", "name": "Launceston hotel, 2 rooms (to book)", "city": "Launceston", "checkIn": "2027-10-27", "checkOut": "2027-10-28", "address": "", "phone": "", "ref": "", "note": "1 night. Two rooms close together — a standard room for the couple and a family room with a cot and an extra bed — or a 2-bedroom apartment. Near City Park / Cataract Gorge; parking."}, {"id": "h4", "name": "Phillip Island holiday house with BBQ (to book)", "city": "Phillip Island", "checkIn": "2027-10-28", "checkOut": "2027-10-30", "address": "", "phone": "", "ref": "", "note": "2 nights. 3 bedrooms: one for the couple, one for the parents, one for the kids — a cot and a single bed (helps everyone sleep). Outdoor BBQ, fenced yard if possible. Cowes is central."}, {"id": "h5", "name": "Melbourne apartment, 2+ bedrooms (to book)", "city": "Melbourne", "checkIn": "2027-10-30", "checkOut": "2027-11-01", "address": "", "phone": "", "ref": "", "note": "2 nights + late checkout on 1 Nov (or a 3rd night for naps before the night flight). 1 bedroom for the couple, 1 for the family of 4 with a cot, or two units in the same building. Melbourne Cup week (Derby Day 30 Oct, Cup Day 2 Nov) — book early, prices rise. CBD free tram zone. You’re keeping the car: choose a place with on-site parking for an 8-seater (check height clearance and the nightly fee)."}], "food": [{"id": "f01", "name": "Salamanca Market food stalls", "city": "Hobart", "type": "Market", "dish": "Scallop pie, cheese, fresh fruit", "diet": "ok", "note": "Saturdays only."}, {"id": "f02", "name": "Constitution Dock fish punts", "city": "Hobart", "type": "Seafood", "dish": "Fish and chips", "diet": "ok", "note": "Casual, outdoor — kid-friendly."}, {"id": "f03", "name": "Kate’s Berry Farm", "city": "Freycinet", "type": "Cafe & sweets", "dish": "Berry ice cream, pancakes", "diet": "ok", "note": "Just south of Swansea."}, {"id": "f04", "name": "Freycinet Marine Farm", "city": "Freycinet", "type": "Seafood", "dish": "Oysters; fish and chips for kids", "diet": "ok", "note": "On the road out of Coles Bay."}, {"id": "f05", "name": "San Remo Fisherman’s Co-op", "city": "Phillip Island", "type": "Seafood", "dish": "Fish and chips; seafood for the BBQ", "diet": "ok", "note": "At the bridge onto the island."}, {"id": "f06", "name": "Phillip Island Chocolate Factory", "city": "Phillip Island", "type": "Cafe & sweets", "dish": "Chocolate tastings", "diet": "ok", "note": "Kids love the displays."}, {"id": "f07", "name": "Acland Street cake shops", "city": "Melbourne", "type": "Cafe & sweets", "dish": "Continental cakes", "diet": "ok", "note": "St Kilda."}, {"id": "f08", "name": "Queen Victoria Market", "city": "Melbourne", "type": "Market", "dish": "Hot jam doughnuts, deli hall", "diet": "ok", "note": "Closed Mon & Wed."}, {"id": "f09", "name": "Lune Croissanterie", "city": "Melbourne", "type": "Bakery", "dish": "Croissant, cruffin", "diet": "ok", "note": "Queue early."}, {"id": "f10", "name": "Chinatown dumplings", "city": "Melbourne", "type": "Noodles", "dish": "Xiao long bao, fried rice", "diet": "ok", "note": "Little Bourke St."}, {"id": "f11", "name": "South Melbourne Market", "city": "Melbourne", "type": "Market", "dish": "Dim sims, fruit", "diet": "ok", "note": "Open Wed, Fri, Sat, Sun from 8am."}], "phrases": [{"id": "p01", "local": "No worries", "roman": "", "en": "It’s fine / you’re welcome", "cat": "Everyday"}, {"id": "p02", "local": "Arvo", "roman": "", "en": "Afternoon", "cat": "Everyday"}, {"id": "p03", "local": "Brekkie", "roman": "", "en": "Breakfast", "cat": "Food"}, {"id": "p04", "local": "Babyccino", "roman": "", "en": "Frothed milk in a little cup — the kids’ café order", "cat": "Food"}, {"id": "p05", "local": "Flat white", "roman": "", "en": "Espresso with steamed milk — the Melbourne coffee order", "cat": "Food"}, {"id": "p06", "local": "Long black", "roman": "", "en": "Black coffee (like an Americano, stronger)", "cat": "Food"}, {"id": "p07", "local": "Snag", "roman": "", "en": "Sausage — BBQ essential", "cat": "Food"}, {"id": "p08", "local": "Barbie", "roman": "", "en": "Barbecue", "cat": "Food"}, {"id": "p09", "local": "Servo", "roman": "", "en": "Petrol station", "cat": "Getting around"}, {"id": "p10", "local": "Pram", "roman": "", "en": "Stroller", "cat": "Everyday"}, {"id": "p11", "local": "Nappies", "roman": "", "en": "Diapers", "cat": "Shopping"}, {"id": "p12", "local": "Dummy", "roman": "", "en": "Pacifier", "cat": "Shopping"}, {"id": "p13", "local": "Chemist", "roman": "", "en": "Pharmacy", "cat": "Shopping"}, {"id": "p14", "local": "Heaps", "roman": "", "en": "A lot / very", "cat": "Everyday"}, {"id": "p15", "local": "Thongs", "roman": "", "en": "Flip-flops", "cat": "Everyday"}, {"id": "p16", "local": "Tap on with your myki", "roman": "", "en": "Use your transit card when boarding (Melbourne)", "cat": "Getting around"}, {"id": "p17", "local": "Give way", "roman": "", "en": "Yield (road sign)", "cat": "Getting around"}], "packing": {"checked": {}, "custom": [{"id": "c01", "t": "ETA approved for all 6 (check in the ETA app)"}, {"id": "c02", "t": "Warm jackets for adults — kunanyi summit can be near 0°C"}, {"id": "c03", "t": "Waterproof shell and walking shoes"}, {"id": "c04", "t": "Beanie, gloves and thermal tops"}, {"id": "c05", "t": "Sunscreen (kids’ formula) and sunglasses — strong spring UV"}, {"id": "c06", "t": "Australian plug adapter (Type I)"}, {"id": "c07", "t": "Driving licences (English) for every driver + credit card for car hire"}, {"id": "c08", "t": "Daypack and water bottles"}, {"id": "c09", "t": "Snacks and water for the long drives"}, {"id": "c10", "t": "Toddler carrier (Wineglass Bay, Salamanca crowds)"}, {"id": "c11", "t": "Compact travel stroller"}, {"id": "c12", "t": "Warm layers for both kids: fleece suit for the toddler, jacket and thermals for the 5-year-old, beanies, mittens"}, {"id": "c13", "t": "Stroller rain cover + a rain jacket for the 5-year-old"}, {"id": "c14", "t": "Nappies & wipes for the flights (buy more there)"}, {"id": "c15", "t": "Formula/milk powder, baby food pouches, bottles — declare all food and baby formula on the arrival card (Australia is strict on biosecurity)"}, {"id": "c16", "t": "Kids’ paracetamol/ibuprofen, thermometer, plasters"}, {"id": "c17", "t": "Car toys, sticker/activity books for the 5-year-old, tablet + kids’ headphones"}, {"id": "c18", "t": "Sippy cup and bibs for the toddler, snack boxes for both"}, {"id": "c19", "t": "Pyjamas in hand luggage for both night flights"}, {"id": "c20", "t": "Kids’ passports + birth certificates (if names differ)"}, {"id": "c21", "t": "Agree how to split shared costs (car, fuel, parks pass, house) — log them in Spending with who paid"}]}};
+const SEED_VER = 'aus27-v14';
+try { if (localStorage.getItem('trip:seedVer') !== JSON.stringify(SEED_VER)) {
+  ['setup','itin','bookings','hotels','food','phrases','packing'].forEach(k => localStorage.removeItem('trip:' + k));
+  localStorage.setItem('trip:seedVer', JSON.stringify(SEED_VER)); } } catch(e){}
+
+/* ---------- app ---------- */
+function App(){
+  const [tab, setTab] = usePersist('tab', 'timeline');
+  const [setup, setSetup] = useSynced('setup', 'setup', SEED.setup);
+  SETUP = { ...BLANK_SETUP, ...(setup || {}), cities:(setup && setup.cities) || [] };
+  const [done, setDone] = useSynced('done', 'done', {}, mergeObj);
+  const [notes, setNotes] = useSynced('notes', 'notes', {}, mergeObj);
+  const [itin, setItin] = useSynced('itin', 'itinerary', SEED.itinerary);
+  const [bookings, setBookings] = useSynced('bookings', 'bookings', SEED.bookings, mergeById);
+  const [hotels, setHotels] = useSynced('hotels', 'hotels', SEED.hotels, mergeById);
+  const [food, setFood] = useSynced('food', 'food', SEED.food, mergeById);
+  const [phrases, setPhrases] = useSynced('phrases', 'phrases', SEED.phrases, mergeById);
+  const [pack, setPack] = useSynced('packing', 'packing', SEED.packing, mergePack);
+  const [spend, setSpend] = useSynced('spend', 'spend', [], mergeById);
+  const days = alignDays(itin);
+  useItinerary(days);
+  const editItin = (fn) => setItin(prev => fn(alignDays(prev)));
+  const [setupOpen, setSetupOpen] = useState(false);
+  const [msg, setMsg] = useState('');
+  const [cityF, setCityF] = useState(null);
+  const pickCity = (c) => { setCityF(c); if (c) setTimeout(() => { const el = document.getElementById('tl-h'); if (el) el.scrollIntoView({ behavior:'smooth', block:'start' }); }, 60); };
+  const timer = useRef(null);
+  const toast = useCallback((m) => { setMsg(m); clearTimeout(timer.current); timer.current = setTimeout(() => setMsg(''), 2400); }, []);
+  const sysDark = () => window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') || (sysDark() ? 'dark' : 'light'));
+  const flipTheme = () => { const t = theme === 'dark' ? 'light' : 'dark'; setTheme(t); document.documentElement.setAttribute('data-theme', t); try { localStorage.setItem('trip:theme', t); } catch(e){} };
+  useEffect(() => { window.scrollTo({ top:0 }); }, [tab]);
+  useEffect(() => { document.title = SETUP.name || 'Trip planner'; }, [SETUP.name]);
+  const toggleDone = (id) => setDone(d => ({ ...d, [id]: !d[id] }));
+  const doneCount = ALL_ACTS.filter(a => done[a.id]).length;
+  const reset = () => { setDone({}); setNotes({}); setPack(p => ({ ...p, checked:{} })); setSpend([]); toast('Progress cleared'); };
+  const openSetup = () => setSetupOpen(true);
+  const TABS = [
+    { id:'timeline', label:'Itinerary', icon:I('CalendarDays') },
+    { id:'map', label:'Map', icon:I('Map') },
+    { id:'bookings', label:'Bookings', icon:I('Ticket'), badge:(bookings || []).filter(b => effStatus(b).s === 'action').length },
+    { id:'hotels', label:'Hotels', icon:I('BedDouble') },
+    { id:'drive', label:'Drive', icon:I('Car') },
+    { id:'utilities', label:'Utilities', icon:I('Wrench') },
+  ];
+  let body;
+  if (tab === 'bookings') body = html`<${Bookings} bookings=${bookings} setBookings=${setBookings} toast=${toast} />`;
+  else if (tab === 'hotels') body = html`<${Hotels} hotels=${hotels} setHotels=${setHotels} toast=${toast} />`;
+  else if (tab === 'map') body = html`<${MapTab} hotels=${hotels} />`;
+  else if (tab === 'drive') body = html`<${Drive} />`;
+  else if (tab === 'utilities') body = html`<${Utilities} setup=${SETUP} setSetup=${setSetup} onSetup=${openSetup} done=${done} notes=${notes} bookings=${bookings} hotels=${hotels} toast=${toast} onReset=${reset} phrases=${phrases} setPhrases=${setPhrases} pack=${pack} setPack=${setPack} spend=${spend} setSpend=${setSpend} />`;
+  else body = html`<${Timeline} done=${done} toggleDone=${toggleDone} notes=${notes} setNotes=${setNotes} toast=${toast} editItin=${editItin} cityF=${cityF} setCityF=${setCityF} onSetup=${openSetup} />`;
+  return html`<${MotionConfig} reducedMotion="user">
+    <div class="wrap">
+      <${Header} doneCount=${doneCount} total=${ALL_ACTS.length} onTheme=${flipTheme} dark=${theme === 'dark'} compact=${tab !== 'timeline'} cityF=${cityF} onCity=${pickCity} onSetup=${openSetup} />
+      <${AnimatePresence} mode="wait" initial=${false}>
+        <${motion.main} key=${tab} initial=${{ opacity:0, y:8 }} animate=${{ opacity:1, y:0 }} exit=${{ opacity:0, y:-6 }} transition=${{ duration:.2 }}>${body}<//>
+      <//>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <div class="flex" style=${{ maxWidth:720, margin:'0 auto' }}>
+        ${TABS.map(t => html`<button key=${t.id} onClick=${() => setTab(t.id)} aria-current=${tab === t.id ? 'page' : undefined}>
+          ${tab === t.id && html`<${motion.span} layoutId="pip" className="pip" transition=${{ type:'spring', stiffness:500, damping:38 }} />`}
+          <span class="relative inline-flex"><${t.icon} size=${21} strokeWidth=${tab === t.id ? 2.2 : 1.8} />
+            ${t.badge > 0 && html`<span style=${{ position:'absolute', top:-4, right:-8, minWidth:16, height:16, padding:'0 4px', borderRadius:8, background:'var(--momiji)', color:'#fff', fontSize:10, fontWeight:700, display:'grid', placeItems:'center' }}>${t.badge}</span>`}
+          </span>
+          <span style=${{ maxWidth:'100%', overflow:'hidden', textOverflow:'ellipsis' }}>${t.label}</span>
+        </button>`)}
+      </div>
+    </nav>
+    <${AnimatePresence}>${setupOpen && html`<${SetupEditor} key="setup" setup=${SETUP} onClose=${() => setSetupOpen(false)} onSave=${s => { setSetup(s); setSetupOpen(false); toast('Trip saved'); }} />`}<//>
+    <${Toast} msg=${msg} />
+  <//>`;
+}
+
+RD.createRoot(document.getElementById('root')).render(html`<${App} />`);
+})();
+</script>
+</body>
+</html>
+
+
+</body></html>
