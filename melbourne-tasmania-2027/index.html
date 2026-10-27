@@ -1,15 +1,18 @@
 <script>
-    const PASSWORD = "lor4noodle"; // Change this to your password
+    const PASSWORD = "lor4noodle"; // Change to your desired password
 
-    // Check if the user already logged in during this browser session
+    // Check if the user is already authenticated in this browser session
     if (sessionStorage.getItem("authenticated") !== "true") {
         let userPass = prompt("Please enter the passcode to view this itinerary:");
+        
         if (userPass === PASSWORD) {
+            // Correct password: Save login status for this browser session
             sessionStorage.setItem("authenticated", "true");
         } else {
-            alert("Incorrect password!");
-            document.write("<h2 style='text-align:center; margin-top:50px;'>Access Denied. Reload page to try again.</h2>");
-            window.stop();
+            // Incorrect password or user clicked Cancel
+            alert("Incorrect password. Redirecting to home page...");
+            // Redirect back to the main landing page in the parent directory
+            window.location.href = "https://hauz90.github.io/Travel-Itinerary/";
         }
     }
 </script>
