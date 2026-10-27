@@ -1,4 +1,18 @@
+<script>
+    const PASSWORD = "Twins"; // Change this to your password
 
+    // Check if the user already logged in during this browser session
+    if (sessionStorage.getItem("authenticated") !== "true") {
+        let userPass = prompt("Please enter the passcode to view this itinerary:");
+        if (userPass === PASSWORD) {
+            sessionStorage.setItem("authenticated", "true");
+        } else {
+            alert("Incorrect password!");
+            document.write("<h2 style='text-align:center; margin-top:50px;'>Access Denied. Reload page to try again.</h2>");
+            window.stop();
+        }
+    }
+</script>
 Japan · Nov 2026.html
 100%
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
